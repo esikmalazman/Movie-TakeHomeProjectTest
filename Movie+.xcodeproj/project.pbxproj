@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0C0CF42A45F05D00C710D7 /* MovieResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C0CF22A45F05D00C710D7 /* MovieResultCell.swift */; };
+		7F0C0CF52A45F05D00C710D7 /* MovieResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0C0CF32A45F05D00C710D7 /* MovieResultCell.xib */; };
+		7F0C0CF82A45F2D900C710D7 /* ReusableXIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C0CF72A45F2D900C710D7 /* ReusableXIB.swift */; };
 		7F1953EB2A44BA6C0058379C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1953EA2A44BA6C0058379C /* AppDelegate.swift */; };
 		7F1953ED2A44BA6C0058379C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1953EC2A44BA6C0058379C /* SceneDelegate.swift */; };
 		7F1953F42A44BA6F0058379C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1953F32A44BA6F0058379C /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F0C0CF22A45F05D00C710D7 /* MovieResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResultCell.swift; sourceTree = "<group>"; };
+		7F0C0CF32A45F05D00C710D7 /* MovieResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieResultCell.xib; sourceTree = "<group>"; };
+		7F0C0CF72A45F2D900C710D7 /* ReusableXIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableXIB.swift; sourceTree = "<group>"; };
 		7F1953E72A44BA6C0058379C /* Movie+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F1953EA2A44BA6C0058379C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F1953EC2A44BA6C0058379C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +47,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F0C0CED2A45EFF900C710D7 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				7F0C0CF22A45F05D00C710D7 /* MovieResultCell.swift */,
+				7F0C0CF32A45F05D00C710D7 /* MovieResultCell.xib */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		7F0C0CF62A45F2C700C710D7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7F0C0CF72A45F2D900C710D7 /* ReusableXIB.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7F1953DE2A44BA6C0058379C = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +83,7 @@
 		7F1953E92A44BA6C0058379C /* Movie+ */ = {
 			isa = PBXGroup;
 			children = (
+				7F0C0CF62A45F2C700C710D7 /* Utilities */,
 				7F20D9D52A44BD1C002A8937 /* Remote */,
 				7F1953EA2A44BA6C0058379C /* AppDelegate.swift */,
 				7F1953EC2A44BA6C0058379C /* SceneDelegate.swift */,
@@ -84,6 +108,7 @@
 		7F1954032A44BAC70058379C /* MovieSearch */ = {
 			isa = PBXGroup;
 			children = (
+				7F0C0CED2A45EFF900C710D7 /* Custom */,
 				7F20D9D12A44BB4F002A8937 /* MovieSearchVC.swift */,
 				7F20D9D22A44BB4F002A8937 /* MovieSearchVC.xib */,
 			);
@@ -182,6 +207,7 @@
 				7F20D9D02A44BAF8002A8937 /* MovieDetailVC.xib in Resources */,
 				7F1953F72A44BA6F0058379C /* LaunchScreen.storyboard in Resources */,
 				7F1953F42A44BA6F0058379C /* Assets.xcassets in Resources */,
+				7F0C0CF52A45F05D00C710D7 /* MovieResultCell.xib in Resources */,
 				7F20D9D42A44BB4F002A8937 /* MovieSearchVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,7 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0C0CF42A45F05D00C710D7 /* MovieResultCell.swift in Sources */,
 				7F20D9D32A44BB4F002A8937 /* MovieSearchVC.swift in Sources */,
+				7F0C0CF82A45F2D900C710D7 /* ReusableXIB.swift in Sources */,
 				7F1953EB2A44BA6C0058379C /* AppDelegate.swift in Sources */,
 				7F1954002A44BAB40058379C /* MovieDetailVC.swift in Sources */,
 				7F1953ED2A44BA6C0058379C /* SceneDelegate.swift in Sources */,
