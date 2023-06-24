@@ -1,0 +1,390 @@
+{
+   "page":1,
+   "results":[
+      {
+         "adult":false,
+         "backdrop_path":null,
+         "genre_ids":[
+            14,
+            878
+         ],
+         "id":610693,
+         "original_language":"tl",
+         "original_title":"ANi",
+         "overview":"Mithi develops an unlikely friendship with a malfunctioning robot named ANi. Together, they embark on a quest to look for magical grains that Mithi believes will save his grandfather's life.",
+         "popularity":0.6,
+         "poster_path":"/uX9mK3anDYNMXbTBiXLGN1Jmrzr.jpg",
+         "release_date":"2019-08-02",
+         "title":"ANi",
+         "video":false,
+         "vote_average":4.0,
+         "vote_count":1
+      },
+      {
+         "adult":false,
+         "backdrop_path":null,
+         "genre_ids":[
+            
+         ],
+         "id":624818,
+         "original_language":"mi",
+         "original_title":"Ani",
+         "overview":"A young girl finds comfort in play and slowly reconnects with her distant father after her mother walks out on the family.",
+         "popularity":0.6,
+         "poster_path":"/zXuNRHCTO7njtdKBDOfJBSUoMKj.jpg",
+         "release_date":"2019-09-07",
+         "title":"Ani",
+         "video":false,
+         "vote_average":5.0,
+         "vote_count":1
+      },
+      {
+         "adult":false,
+         "backdrop_path":null,
+         "genre_ids":[
+            18
+         ],
+         "id":777641,
+         "original_language":"tr",
+         "original_title":"Anı",
+         "overview":"A woman tries to remember her forgotten memories by going through old photographs. As she goes deep into her memories, she gets even more confused about her past.",
+         "popularity":0.6,
+         "poster_path":"/vFv0HEgeV8z9YSKI5KHOKMzMNBQ.jpg",
+         "release_date":"2020-01-01",
+         "title":"Memory",
+         "video":false,
+         "vote_average":0.0,
+         "vote_count":0
+      },
+      {
+         "adult":false,
+         "backdrop_path":null,
+         "genre_ids":[
+            18
+         ],
+         "id":779214,
+         "original_language":"tr",
+         "original_title":"Ani",
+         "overview":"This movie is about an old woman Türkan's encounter with one of her oldest friends years later. Türkan comes to the hospital with her daughter and coincidentally meets Nermin. During the chemotherapy session, Nermin seems pleased to talk to Türkan about the good old days. However, when Türkan leaves the hospital, she seems very upset about this meeting.",
+         "popularity":0.6,
+         "poster_path":"/sBTvYJzyYe6qxdeYNajFf3pVlPh.jpg",
+         "release_date":"2019-01-01",
+         "title":"Memory",
+         "video":false,
+         "vote_average":0.0,
+         "vote_count":0
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/zojlWX59bx5lgJCfJxMtKIVgNSI.jpg",
+         "genre_ids":[
+            16,
+            28
+         ],
+         "id":779019,
+         "original_language":"ja",
+         "original_title":"グリザイア：ファントムトリガー THE ANIMATION スターゲイザー",
+         "overview":"While Rena and Maki recover from their injuries, the other SORD members jet off overseas for a school trip. Within moments of their arrival, though, the Mihama gang are pulled into a manhunt for a SORD deserter, assisted by student Sylvia and Velvet of St. Aile's International School. Tohka's the star of the show this time round, but she's wrestling with her own issues - old memories of her parents, and a promise to a friend that she wasn't able to keep...",
+         "popularity":34.244,
+         "poster_path":"/zNaweWLkwIAsrdeBq4Hu6j6EO5a.jpg",
+         "release_date":"2020-11-27",
+         "title":"Grisaia: Phantom Trigger The Animation - Stargazer",
+         "video":false,
+         "vote_average":5.8,
+         "vote_count":23
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/qvUiNH0VwtIfGNXCBgmWsh22aWb.jpg",
+         "genre_ids":[
+            28,
+            16
+         ],
+         "id":601980,
+         "original_language":"ja",
+         "original_title":"グリザイア：ファントムトリガー THE ANIMATION",
+         "overview":"Following the Heath Oslo incident, the existence of the US-Japanese anti-terror organization CIRS has become a matter of public knowledge. CIRS has been rebuilt from the ground up, and its most covert functions spun off to a new agency: SORD (Social Ops, Research \u0026 Development).  The goal of SORD is to train a new generation of operatives to defend the country against future threats. To that end, the organization has established a series of schools up and down the country. Mihama Academy, more-or-less left to rot after its abrupt closure, has been given new purpose as one such 'specialist training school'. It now entrusts the misfit girls who attend it with guns and live ammunition.  No matter how much life grinds them down, what future awaits these girls, who've themselves chosen the path of the gun?",
+         "popularity":6.52,
+         "poster_path":"/cllFRaJmSyWlIYwJNbVslRoR9dP.jpg",
+         "release_date":"2019-03-15",
+         "title":"Grisaia: Phantom Trigger The Animation",
+         "video":false,
+         "vote_average":6.1,
+         "vote_count":9
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/1100JRh1VbDkGiKBciy3lSuLxX7.jpg",
+         "genre_ids":[
+            10751,
+            12,
+            14
+         ],
+         "id":793937,
+         "original_language":"de",
+         "original_title":"Die Schule der magischen Tiere",
+         "overview":"Ida has a hard time making friends. One day, her weird class teacher announces that everyone in the class will have a magical animal with them. Ida is put to the side of the fox Rabbat. Benni, just like Ida also an outsider, has the turtle Henrietta as a new companion. Together they have amazing adventures ahead of them, but will they be able to fulfill the main requirement of the \"Magic Pet Shop\": to keep their new friends a secret from adults?",
+         "popularity":17.913,
+         "poster_path":"/lJl7go7W9MG4yVOQ3qCLTWo6oe9.jpg",
+         "release_date":"2021-10-14",
+         "title":"The School of the Magical Animals",
+         "video":false,
+         "vote_average":6.1,
+         "vote_count":53
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/jxIcuIIHEGeT9RZ1zE9UBI3WzxS.jpg",
+         "genre_ids":[
+            10751,
+            16,
+            12
+         ],
+         "id":160642,
+         "original_language":"ja",
+         "original_title":"映画ドラえもん のび太と奇跡の島 ～アニマル アドベンチャー～",
+         "overview":"Nobita and Doraemon use time tree Mochi and catches a big bird Moa, which has been extinct for 500 years ago. To protect extinct the animal, Nobita and Doramon go to Beremon Island which is protected by a golden beetle named Herakles. They meet a girl from the Rokkoro tribe and a boy who looks exactly like Nobita on Beremon Island ...",
+         "popularity":21.732,
+         "poster_path":"/mUJGtID4UyO6nLE0Ztqq48y4Hdw.jpg",
+         "release_date":"2012-03-03",
+         "title":"Doraemon: Nobita and the Island of Miracles - Animal Adventure",
+         "video":false,
+         "vote_average":7.0,
+         "vote_count":54
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/ulvjExkPAjp0V9AMPs8vPvwMhF7.jpg",
+         "genre_ids":[
+            18
+         ],
+         "id":47397,
+         "original_language":"sv",
+         "original_title":"Anita",
+         "overview":"Anita, a young woman with a troubled childhood and a hunger for love, finds a soul mate in Erik, a kindly college student.",
+         "popularity":10.515,
+         "poster_path":"/f7Rzw8fnOThHaJA9vVGoZjTM1PV.jpg",
+         "release_date":"1973-12-25",
+         "title":"Anita, Swedish Nymphet",
+         "video":false,
+         "vote_average":5.2,
+         "vote_count":58
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/r1zZddN8h5nRCNrxEOhom7C0HGS.jpg",
+         "genre_ids":[
+            27,
+            16
+         ],
+         "id":432130,
+         "original_language":"ja",
+         "original_title":"青鬼 THE ANIMATION",
+         "overview":"Based on the horror game Ao Oni by noprops.  Five members of the cultural anthropology club at an old western-style school are trying to come up with ideas for their presentation at the school's culture festival, when they find a collection of folk tales gathered by a student in their club 40 years ago. They realize that the mysterious Bellflower Oni that appears in the folk tales may be the basis for the popular free game Ao Oni, and decide to make that their theme. They manage to make contact with the author of the Ao Oni game, but he dies mysteriously soon afterward. The club members become suspicious at the author's death and began to investigate on their own, but encounter a secret they never should have touched: a secret underground prison in the school.  For some reason all the fire doors at the school are locked, and they are trapped in the school. The sound of the strange footsteps they hear soon turn to their screams...A new tragedy of the Ao Oni is about to begin.",
+         "popularity":4.457,
+         "poster_path":"/jPyszMQYZeSavomvxOfoXzV651W.jpg",
+         "release_date":"2017-02-11",
+         "title":"Ao Oni The Animation",
+         "video":false,
+         "vote_average":5.2,
+         "vote_count":10
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/A9Yy4ZRJgTXlKa1KOV92YLTCppn.jpg",
+         "genre_ids":[
+            28,
+            16,
+            12
+         ],
+         "id":44725,
+         "original_language":"ja",
+         "original_title":"ワンピース 珍獣島のチョッパー王国",
+         "overview":"As the Straw Hat Pirates sail through the Grand Line.A line of geysers erupted from under the Going Merry. And the whole crew find themselves flying over the island. Unfortunatly, Chopper fell off the ship and was separated from his friends. Luffy and the others landed on the other side of the island. Chopper meanwhile finds himself being worshiped as the island's new king by the animals. To make matters worse, a trio of human \"horn\" hunters are on the island. The leader, Count Butler is a violin playing/horn eating human who wants to eat the island's treasure to inherit immense power. Will Luffy \u0026 the rest be able to prevent the count from terrorizing the island? And will they be able to convince Momambi that not all pirates are bad?",
+         "popularity":24.088,
+         "poster_path":"/8uzFccR8F3h7tC9zfIOT063r91N.jpg",
+         "release_date":"2002-03-02",
+         "title":"One Piece: Chopper's Kingdom on the Island of Strange Animals",
+         "video":false,
+         "vote_average":6.851,
+         "vote_count":151
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/reMt35KtqTTIy0mhcKA1PfuruDq.jpg",
+         "genre_ids":[
+            16,
+            28
+         ],
+         "id":12613,
+         "original_language":"ja",
+         "original_title":"ストリートファイター II MOVIE",
+         "overview":"Bison, the ruthless leader of the international terrorist organization Shadowlaw, has been desperately searching for the greatest fighter on the planet for years. He finds it in Ryu, a young wanderer who never stays in one place long enough for Bison to find him. He does, however, get a fix on Ken Masters, an American martial arts champion who studied with Ryu as a child under the same master. Meanwhile, Major Guile of the United States Army is forced to team up with Chun Li from China in hopes of apprehending Bison and putting a stop his international ring of crime.",
+         "popularity":16.693,
+         "poster_path":"/dZ1rqmE4eIhPbUCr7sn2Pw2wwGW.jpg",
+         "release_date":"1994-08-06",
+         "title":"Street Fighter II: The Animated Movie",
+         "video":false,
+         "vote_average":6.9,
+         "vote_count":202
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/uCn0Pqa4D5RjXcbBzTneiUO2Sik.jpg",
+         "genre_ids":[
+            27
+         ],
+         "id":95667,
+         "original_language":"en",
+         "original_title":"Night of the Living Dead: Re-Animation",
+         "overview":"After inheriting the family mortuary, a pyrophobic mortician accidentally exposes hundreds of un-cremated bodies to toxic medical waste. As the corpses re-animate, the mortician's inheritance-seeking younger brother unexpectantly shows up, stumbling upon a full zombie outbreak!",
+         "popularity":6.029,
+         "poster_path":"/oZwmgcATMp0CqiaMIWkIGXaFAnf.jpg",
+         "release_date":"2012-10-16",
+         "title":"Night of the Living Dead: Re-Animation",
+         "video":false,
+         "vote_average":6.4,
+         "vote_count":98
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/ndF6ZhUodLMk7GarzEUlxIbpwlr.jpg",
+         "genre_ids":[
+            35
+         ],
+         "id":8767,
+         "original_language":"fr",
+         "original_title":"L'Animal",
+         "overview":"Mike (Jean-Paul Belmondo) is a stuntman who works with his girlfriend Jane (Raquel Welch). On their wedding day Mike and Jane are forced by producers to do a stunt for a film they are working on. Mike, annoyed doesn't look on the road and crashes the car causing them to end up in a hospital. After they come out Jane doesn't want to talk to Mike so he decides to get her a job in a film in which he is a stunt double for his double who is a star in action pictures but is in fact a wimp.",
+         "popularity":6.712,
+         "poster_path":"/eeDhwzAfaMkKqa91mtbUWLzS2Cp.jpg",
+         "release_date":"1977-10-05",
+         "title":"Animal",
+         "video":false,
+         "vote_average":6.4,
+         "vote_count":77
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/9bKg2Tft4P3AovKHzb7RTflcX3X.jpg",
+         "genre_ids":[
+            16,
+            10751,
+            35
+         ],
+         "id":50135,
+         "original_language":"de",
+         "original_title":"Konferenz der Tiere",
+         "overview":"A group of animals waiting for the annual flood they rely on for food and water discover that the humans, who have been destroying their habitats have built a dam for a leisure resort. The animals endeavour to save the delta and send a message to the humans not to interfere with nature.",
+         "popularity":12.877,
+         "poster_path":"/gUCLetZNa3rZknSmLc2gGUdxWH7.jpg",
+         "release_date":"2010-10-07",
+         "title":"Animals United",
+         "video":false,
+         "vote_average":5.6,
+         "vote_count":278
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/5eh3FcbEEK9jyoZr6CApEFwvlwU.jpg",
+         "genre_ids":[
+            27
+         ],
+         "id":676839,
+         "original_language":"es",
+         "original_title":"Animales Humanos",
+         "overview":"",
+         "popularity":3.225,
+         "poster_path":"/1EPy9y9l94zQyQDnMpcCyzwD4Jp.jpg",
+         "release_date":"2020-12-12",
+         "title":"Human Animals",
+         "video":false,
+         "vote_average":6.9,
+         "vote_count":62
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/qsHpl73uTdlMcpwROZrXlniQXjP.jpg",
+         "genre_ids":[
+            53,
+            18,
+            27
+         ],
+         "id":484436,
+         "original_language":"es",
+         "original_title":"Ánimas",
+         "overview":"Abraham and his female friend Álex have a close relationship; they share both secrets and fears. When Abraham starts going out with Anchi, he begins to distance himself from Álex, who gradually dives into a living hell where she encounters strange apparitions, nightmarish visions and extreme situations.",
+         "popularity":5.557,
+         "poster_path":"/2pOIMOAsi2zPAWzf0sy2Zk9BSTp.jpg",
+         "release_date":"2018-10-05",
+         "title":"Animas",
+         "video":false,
+         "vote_average":5.0,
+         "vote_count":93
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/vq2TVlQmOUE6uZnRIZD475IcoAX.jpg",
+         "genre_ids":[
+            12,
+            35,
+            16
+         ],
+         "id":280391,
+         "original_language":"fr",
+         "original_title":"Pourquoi j'ai pas mangé mon père",
+         "overview":"Based on the novel 'Evolution Man' by Roy Lewis, this tells the story about the first man - young Edward - to descend from apes. Edward is ejected by his tribe, but is very resourceful. He learns to walk, discovers fire, manages to hunt - and we follow him as he evolves. He has a generous nature, and search for true humanity - a world where we don't eat our fathers.",
+         "popularity":25.424,
+         "poster_path":"/7qccdwXUMazLqkMKm4ZJ7lAnzUF.jpg",
+         "release_date":"2015-04-08",
+         "title":"Animal Kingdom: Let's Go Ape",
+         "video":false,
+         "vote_average":5.2,
+         "vote_count":315
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/h1bqqvt72zhipUSNNqt5ZetE5is.jpg",
+         "genre_ids":[
+            16,
+            14,
+            10752,
+            10770
+         ],
+         "id":492606,
+         "original_language":"en",
+         "original_title":"Game of Thrones - Conquest \u0026 Rebellion: An Animated History of the Seven Kingdoms",
+         "overview":"HBO's animated history of Westeros brings to life all the events that shaped the Seven Kingdoms in the thousands of years before Game of Thrones' story begins.",
+         "popularity":23.365,
+         "poster_path":"/b3HXxFnhy0pamuDY9rqJ4mk7L1t.jpg",
+         "release_date":"2017-12-12",
+         "title":"Game of Thrones - Conquest \u0026 Rebellion: An Animated History of the Seven Kingdoms",
+         "video":true,
+         "vote_average":7.7,
+         "vote_count":77
+      },
+      {
+         "adult":false,
+         "backdrop_path":"/6AlpMzD4pw8JFBuv7d3lnKXIdPx.jpg",
+         "genre_ids":[
+            28,
+            16,
+            12,
+            14
+         ],
+         "id":102070,
+         "original_language":"ja",
+         "original_title":"劇場版 魔法先生ネギま! Anime Final",
+         "overview":"The story is centred around Negi Springfield, a ten-year-old wizard from Wales, who dreams of becoming a Magister Magi like his missing father, a special wizard who uses his powers to help normal people, using covers such as working for NGOs. Initially appointed as an English teacher at Mahora Academy in Japan he becomes a teacher to a middle school class of 31 older girls. However, the peaceful school life is quickly disturbed as people from his father's past appear and Negi has to form contracts with various students to overcome the new dangers. Finally he embarks on a journey to the Magic World together with his partners to find his long-lost father. This film is the climax to their adventures depicted in the Shiroki Tsubasa Ala Alba and Mou Hitotsu no Sekai OVAs.",
+         "popularity":1.711,
+         "poster_path":"/bGOiP1EKSf7d1czyJEwsurLz1NI.jpg",
+         "release_date":"2011-08-27",
+         "title":"Magister Negi Magi: Anime Final",
+         "video":false,
+         "vote_average":7.2,
+         "vote_count":8
+      }
+   ],
+   "total_pages":140,
+   "total_results":2791
+}
