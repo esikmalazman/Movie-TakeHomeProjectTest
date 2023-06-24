@@ -12,7 +12,7 @@ Todo's
 1. Searchbar to search movies by title
 - Setup UI for Searchbar ✅
 - Connect delegate for Searchbar ✅
-- Setup & Perform network request to fetch query results
+- Setup & Perform network request to fetch query results 
 - Add validation to see if there any search query and results before, if has we show them on the screen list before start search, upon start search we clear the results from table view
 - When user in offline mode, we direct to previously movie fetch (Bonus)
 
@@ -20,7 +20,7 @@ Todo's
 - Setup UI for TableView ✅
 - Connect TV Datasource & Delegate ✅
 - Display search results from query
-- Setup UI for custom cell
+- Setup UI for custom cell ✅
 - Save the search results in Core Data
 - Navigate selected results to Detail View
 
@@ -31,7 +31,7 @@ Todo's
 - Implement Method to save the favourites
 
 4. Prepare Unit Test / UI Test
-- Validate all UI connected include delegate, navigation controller, title
+- Validate all UI connected include delegate, navigation controller, title ✅
 - Prepare to test Network & Core Data
 """)
 
