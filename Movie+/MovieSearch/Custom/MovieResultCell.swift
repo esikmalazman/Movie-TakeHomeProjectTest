@@ -24,4 +24,10 @@ final class MovieResultCell: UITableViewCell {
         super.layoutSubviews()
         thumbnailImageView.layer.cornerRadius = 5
     }
+    
+    func configure(_ data : Movie) {
+        self.releaseDateLabel.text = data.releaseDate ?? "Release date not available"
+        self.titleLabel.text = data.title
+        self.thumbnailImageView.downloadImage(fromURLString: data.posterPath ?? "")
+    }
 }

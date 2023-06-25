@@ -18,7 +18,7 @@ extension APIProvider {
         case .movieDB:
             return "https://api.themoviedb.org"
         case .imageDB:
-            return "https://image.tmdb.org"
+            return "https://image.tmdb.org/t/p"
         }
     }
 }

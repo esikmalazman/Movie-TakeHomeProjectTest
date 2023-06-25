@@ -16,7 +16,7 @@ extension MovieService {
     var endpoint : String {
         switch self {
         case .searchMovieByTitle(let query):
-            return createEndpoint("search/movie?query=\(query)&")
+            return createEndpoint("search/movie?query=\(query)&sort_by=popularity.desc&")
         case .getMovieDetails(let id) :
             return createEndpoint("movie/\(id)?")
         }

@@ -28,16 +28,16 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cqH-IY-rLk" userLabel="LabelStackView">
-                                <rect key="frame" x="141" y="23.333333333333332" width="74.333333333333314" height="43.333333333333343"/>
+                                <rect key="frame" x="141" y="24.666666666666671" width="169" height="41"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwX-S1-CrI" userLabel="TitleLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" showsExpansionTextWhenTruncated="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VwX-S1-CrI" userLabel="TitleLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="21.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toK-Sy-kcH" userLabel="ReleaseDateLabel">
-                                        <rect key="frame" x="0.0" y="29.000000000000004" width="74.333333333333329" height="14.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="26.666666666666668" width="74.333333333333329" height="14.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -48,8 +48,9 @@
                         <constraints>
                             <constraint firstItem="cqH-IY-rLk" firstAttribute="leading" secondItem="jtI-fk-jrg" secondAttribute="trailing" constant="16" id="3qP-mu-qg1"/>
                             <constraint firstItem="cqH-IY-rLk" firstAttribute="centerY" secondItem="jtI-fk-jrg" secondAttribute="centerY" id="D13-br-pGX"/>
+                            <constraint firstAttribute="trailing" secondItem="cqH-IY-rLk" secondAttribute="trailing" constant="10" id="HHa-Qz-hZB"/>
                             <constraint firstItem="jtI-fk-jrg" firstAttribute="leading" secondItem="Ibe-of-3WB" secondAttribute="leading" constant="20" id="iAE-nc-mdH"/>
-                            <constraint firstAttribute="height" priority="999" constant="80" id="mB4-Xf-ldC"/>
+                            <constraint firstAttribute="height" priority="999" constant="100" id="mB4-Xf-ldC"/>
                             <constraint firstItem="jtI-fk-jrg" firstAttribute="centerY" secondItem="Ibe-of-3WB" secondAttribute="centerY" id="sfU-a5-Uea"/>
                         </constraints>
                     </view>
