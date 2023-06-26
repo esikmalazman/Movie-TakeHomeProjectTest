@@ -110,6 +110,7 @@ private extension MovieSearchVC {
         searchResultsTableView.delegate = self
         searchResultsTableView.dataSource = self
         
+        searchResultsTableView.register(RecentlySearchCell.nib(), forCellReuseIdentifier: RecentlySearchCell.identifier)
         searchResultsTableView.register(MovieResultCell.nib(), forCellReuseIdentifier: MovieResultCell.identifier)
     }
     

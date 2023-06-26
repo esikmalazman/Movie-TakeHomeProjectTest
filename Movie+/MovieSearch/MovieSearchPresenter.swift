@@ -13,7 +13,11 @@ protocol MovieSearchPresenterDelegate : AnyObject {
 }
 
 final class MovieSearchPresenter {
-    var recentlySearchQueries : [String] = []
+#warning("Empty it once ready to implement Core Data")
+    var recentlySearchQueries : [String] = [
+        "Recent 1",
+        "Recent 2"
+    ]
     var moviesList : [Movie] = []
     
     weak var delegate : MovieSearchPresenterDelegate?
