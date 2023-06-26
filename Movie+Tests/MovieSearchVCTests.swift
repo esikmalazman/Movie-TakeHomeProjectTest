@@ -2,22 +2,20 @@
 import XCTest
 
 final class MovieSearchVCTests: XCTestCase {
-
+    
     var sut : MovieSearchVC!
-    var presenter : MovieSearchPresenter!
-
+    
     override func setUp() {
         super.setUp()
-        presenter = MovieSearchPresenter()
+        let presenter = MovieSearchPresenter()
         
         sut = MovieSearchVC()
         sut.presenter = presenter
-        
         sut.loadViewIfNeeded()
     }
     
     override func tearDown() {
-        presenter = nil
+        executeRunLoop()
         sut = nil
         super.tearDown()
     }
@@ -66,4 +64,32 @@ final class MovieSearchVCTests: XCTestCase {
     }
     
     
+    func test_clickSearchBarSearchButton_withNotEmptyQuery_shouldInsertQueryToRecentlySearchCollection() {
+        sut.searchBar.text = "Fake Query"
+        
+        searchBarSearchButtonClicked(sut.searchBar)
+        
+        XCTAssertEqual(sut.presenter.recentlySearchQueries.count, 1)
+        XCTAssertEqual(sut.presenter.recentlySearchQueries.first, "Fake Query")
+    }
+    
+    func test_clickSearchBarSearchButton_withEmptyQuery_shouldNotInsertQueryToRecentlySearchCollection() {
+        sut.searchBar.text = ""
+        
+        searchBarSearchButtonClicked(sut.searchBar)
+        
+        XCTAssertEqual(sut.presenter.recentlySearchQueries.count, 0)
+    }
+    
+    func test_clickSearchBarSearchButton_shouldClearStoredExistingMovieList() {
+        sut.searchBar.text = "Fake Query"
+        
+        searchBarSearchButtonClicked(sut.searchBar)
+        
+        XCTAssertEqual(sut.presenter.moviesList.count, 0)
+    }
+    
+    // MARK:  TODO's
+    // 1. To test requested movie flow, we might create protocol for presenter then create mock version of it
+    // 2. To test the delegate and dataSource method of the table view
 }

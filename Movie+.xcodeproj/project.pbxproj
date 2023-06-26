@@ -29,6 +29,7 @@
 		7FD404AA2A47A78B00CFBE41 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD404A92A47A78B00CFBE41 /* Secrets.swift */; };
 		7FD404AC2A47A7D500CFBE41 /* MovieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD404AB2A47A7D500CFBE41 /* MovieInteractor.swift */; };
 		7FDFFAC52A49DC3800A5C7C0 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFFAC42A49DC3800A5C7C0 /* TestHelpers.swift */; };
+		7FDFFAC72A49DCFB00A5C7C0 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFFAC62A49DCFB00A5C7C0 /* MockURLProtocol.swift */; };
 		7FE7D7F22A46A65C00229C2E /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7D7F12A46A65C00229C2E /* HttpClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		7FD404A92A47A78B00CFBE41 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		7FD404AB2A47A7D500CFBE41 /* MovieInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInteractor.swift; sourceTree = "<group>"; };
 		7FDFFAC42A49DC3800A5C7C0 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		7FDFFAC62A49DCFB00A5C7C0 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		7FE7D7F12A46A65C00229C2E /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +205,7 @@
 			children = (
 				7F36F3F02A460B44009EF15C /* MovieSearchVCTests.swift */,
 				7FDFFAC42A49DC3800A5C7C0 /* TestHelpers.swift */,
+				7FDFFAC62A49DCFB00A5C7C0 /* MockURLProtocol.swift */,
 			);
 			path = "Movie+Tests";
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FDFFAC72A49DCFB00A5C7C0 /* MockURLProtocol.swift in Sources */,
 				7F36F3F12A460B44009EF15C /* MovieSearchVCTests.swift in Sources */,
 				7FDFFAC52A49DC3800A5C7C0 /* TestHelpers.swift in Sources */,
 			);
