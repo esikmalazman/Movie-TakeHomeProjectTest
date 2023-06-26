@@ -10,6 +10,7 @@ import Foundation
 protocol MovieSearchPresenterDelegate : AnyObject {
     func renderMovieSearchResults(_ presenter :MovieSearchPresenter, didLoadSuccess data : [Movie])
     func renderMovieSearchResults(_ presenter :MovieSearchPresenter, didFailWithError error : Error)
+    func navigateToMovieDetailScreen(_ presenter :MovieSearchPresenter, didTapMovie movieId : Int)
 }
 
 final class MovieSearchPresenter {
@@ -43,6 +44,11 @@ final class MovieSearchPresenter {
 extension MovieSearchPresenter {
     func insertRecentlySearchQueries(_ query : String) {
         recentlySearchQueries.append(query)
+    }
+    
+    func selectMovie(at index : Int) {
+        let selectedMovie = moviesList[index]
+        delegate?.navigateToMovieDetailScreen(self, didTapMovie: selectedMovie.id ?? 0)
     }
 }
 

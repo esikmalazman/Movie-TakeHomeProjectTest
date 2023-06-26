@@ -91,7 +91,8 @@ extension MovieSearchVC : UITableViewDataSource {
 // MARK:  UITableViewDelegate
 extension MovieSearchVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        #warning("need to consider the recent search after this")
+        presenter.selectMovie(at: indexPath.row)
     }
 }
 
@@ -102,6 +103,12 @@ extension MovieSearchVC : MovieSearchPresenterDelegate {
     
     func renderMovieSearchResults(_ presenter: MovieSearchPresenter, didFailWithError error: Error) {
         reloadTableView()
+    }
+    
+    func navigateToMovieDetailScreen(_ presenter: MovieSearchPresenter, didTapMovie movieId : Int) {
+        let movieDetailVC = MovieDetailVC()
+        movieDetailVC.setMovieId(movieId)
+        navigationController?.pushViewController(movieDetailVC, animated: true)
     }
 }
 
