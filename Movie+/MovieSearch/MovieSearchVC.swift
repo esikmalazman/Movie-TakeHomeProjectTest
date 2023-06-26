@@ -56,7 +56,7 @@ final class MovieSearchVC: UIViewController {
 // MARK:  UISearchBarDelegate
 extension MovieSearchVC : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let queryText = searchBar.text ?? ""
+        guard let queryText = searchBar.text, !queryText.isEmpty else {return}
         
         presenter.insertRecentlySearchQueries(queryText)
         presenter.clearMovieList()

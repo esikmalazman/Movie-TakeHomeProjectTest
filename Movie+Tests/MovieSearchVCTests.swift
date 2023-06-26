@@ -4,14 +4,20 @@ import XCTest
 final class MovieSearchVCTests: XCTestCase {
 
     var sut : MovieSearchVC!
-    
+    var presenter : MovieSearchPresenter!
+
     override func setUp() {
         super.setUp()
+        presenter = MovieSearchPresenter()
+        
         sut = MovieSearchVC()
+        sut.presenter = presenter
+        
         sut.loadViewIfNeeded()
     }
     
     override func tearDown() {
+        presenter = nil
         sut = nil
         super.tearDown()
     }
@@ -22,9 +28,10 @@ final class MovieSearchVCTests: XCTestCase {
     }
     
     func test_delegatesShouldBeConnected() {
-        XCTAssertNotNil(sut.searchBar.delegate, "searchBar delegate")
-        XCTAssertNotNil(sut.searchResultsTableView.delegate, "searchResultsTableView delegate")
-        XCTAssertNotNil(sut.searchResultsTableView.dataSource, "searchResultsTableView dataSource")
+        XCTAssertNotNil(sut.searchBar.delegate, "UISearchBarDelegate")
+        XCTAssertNotNil(sut.searchResultsTableView.delegate, "UITableViewDelegate")
+        XCTAssertNotNil(sut.searchResultsTableView.dataSource, "UITableViewDataSource")
+        XCTAssertNotNil(sut.presenter.delegate, "MovieSearchPresenterDelegate")
     }
     
     func test_sutTitle_shouldBeSearch() {
@@ -38,4 +45,25 @@ final class MovieSearchVCTests: XCTestCase {
     func test_searchBarCancelButton_shouldEnabled() {
         XCTAssertTrue(sut.searchBar.showsCancelButton, "showsCancelButton")
     }
+    
+    func test_clickSearchBarCancelButton_shouldResignKeyboard() {
+        sut.searchBar.becomeFirstResponder()
+        executeRunLoop()
+        
+        searchBarButtonCancelClicked(sut.searchBar)
+        
+        XCTAssertFalse(sut.searchBar.isFirstResponder)
+    }
+    
+    func test_clickSearchBarCancelButton_shouldClearSearchText() {
+        sut.searchBar.becomeFirstResponder()
+        executeRunLoop()
+        
+        searchBarButtonCancelClicked(sut.searchBar)
+        
+        let searchBarTextIsEmpty = sut.searchBar.text?.isEmpty
+        XCTAssertEqual(searchBarTextIsEmpty, true)
+    }
+    
+    
 }
