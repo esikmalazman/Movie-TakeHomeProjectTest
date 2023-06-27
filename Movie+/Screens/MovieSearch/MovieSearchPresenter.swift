@@ -19,6 +19,7 @@ final class MovieSearchPresenter {
         "Recent 1",
         "Recent 2"
     ]
+    
     var moviesList : [Movie] = []
     
     weak var delegate : MovieSearchPresenterDelegate?

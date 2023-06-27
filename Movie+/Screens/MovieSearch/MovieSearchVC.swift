@@ -67,6 +67,12 @@ extension MovieSearchVC : UISearchBarDelegate {
         clearSearchBar()
     }
 }
+/**
+ 1. Check if movie list empty, show recently search
+ 2. Search begin, recent search removed
+ 3. Check if cancel and no query, show the recent search again
+ 4. If results
+**/
 
 // MARK:  UITableViewDataSource
 extension MovieSearchVC : UITableViewDataSource {
