@@ -40,6 +40,7 @@ final class MovieDetailVC: UIViewController {
 
 // MARK:  Actions
 extension MovieDetailVC {
+    #warning("save favourites in Core Data")
     @IBAction func addToFavouriteTapped(_ sender: UIButton) {
     }
 }
@@ -59,6 +60,8 @@ extension MovieDetailVC : MovieDetailPresenterDelegate {
 extension MovieDetailVC {
     func configureMovieDetails(_ data : MovieDetail) {
         posterImageView.downloadImage(fromURLString: data.backdropPath ?? "", imageSize: .backdrop)
+        posterImageView.layoutIfNeeded()
+        
         movieTitle.text = data.title
         movieReleaseDateTitle.text = data.releaseDate
         overviewDescription.text = data.overview

@@ -35,8 +35,8 @@ extension UIImageView {
         self.image = nil
         
         /// Retrieve image from cache if available, if not download new image
-        if let imageFromCache = imageCache.object(forKey: NSString(string: urlString)) {
-            self.image = imageFromCache
+        if let cachedImage = imageCache.object(forKey: NSString(string: urlString)) {
+            self.image = cachedImage
             return
         }
         
