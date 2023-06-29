@@ -11,43 +11,76 @@ final class RecentsSearchVC: UIViewController {
     
     @IBOutlet weak var recentsTableView : UITableView!
     
+    #warning("refactor with custom cell")
     let testCell = "testCell"
     
-    var movieQueries = [MovieQuery]()
+    var presenter : RecentsSearchPresenter = RecentsSearchPresenter()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-#warning("move to presenter")
-        AppDelegate.shared.cdStack.fetchContext(of: MovieQuery.self, with: []) { result in
-            self.movieQueries = result
-            DispatchQueue.main.async {
-                self.recentsTableView.reloadData()
-            }
-        }
+        presenter.requestCacheSearchQueries()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.delegate = self
         configureRecentsTableView()
     }
 }
 
+// MARK:  UITableViewDataSource
 extension RecentsSearchVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieQueries.count
+        return presenter.movieQueryList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let movieQuery = presenter.recentQueries(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: testCell, for: indexPath)
-        cell.textLabel?.text = movieQueries[indexPath.row].query
+        cell.textLabel?.text = movieQuery.query
         return cell
     }
 }
 
+// MARK:  UITableViewDelegate
 extension RecentsSearchVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.openRecentQueryResults(at: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
+#warning("handle delete action from Core Date when method ready")
+        let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { _, _, _ in
+            
+            self.presenter.removeRecentQueryResults(at: indexPath)
+            
+        }
+        
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
+    }
+}
+
+// MARK:  RecentsSearchPresenterDelegate
+extension RecentsSearchVC : RecentsSearchPresenterDelegate {
+    func navigateToRecentDetailScreen(_ presenter: RecentsSearchPresenter, didTapQuery query: String, _ data: [Movie]) {
+        let recentDetailVC = RecentDetailVC()
+        recentDetailVC.setMovieList(data, query)
+        navigationController?.pushViewController(recentDetailVC, animated: true)
+    }
+    
+    func renderCacheQuerySearchResults(_ presenter: RecentsSearchPresenter, didLoadSuccess data: [MovieQuery]) {
+        reloadMovieListTableView()
+    }
+    
+    func renderCacheQuerySearchResults(_ presenter: MovieSearchPresenter, didFailWithError error: Error) {
+#warning("handle error")
+    }
+    
+    func refreshCacheQuerySearchResults(_ presenter: RecentsSearchPresenter) {
+        reloadMovieListTableView()
     }
 }
 
@@ -59,5 +92,11 @@ private extension RecentsSearchVC {
         recentsTableView.register(UITableViewCell.self, forCellReuseIdentifier: testCell)
         recentsTableView.delegate = self
         recentsTableView.dataSource = self
+    }
+    
+    func reloadMovieListTableView() {
+        DispatchQueue.main.async {
+            self.recentsTableView.reloadData()
+        }
     }
 }
