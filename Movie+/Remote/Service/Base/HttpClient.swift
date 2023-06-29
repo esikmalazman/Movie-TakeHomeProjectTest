@@ -34,22 +34,9 @@ final class HttpClient {
                 return
             }
             
-            self.parseData(data, mapper: mapper, completion)
+            GeneralUtils.parseData(data, mapper: mapper, completion)
         }
         
         task.resume()
-    }
-    
-    func parseData<T:Decodable>(_ data : Data, mapper : T.Type, _ completion : @escaping (Result<T, Error>)->Void) {
-        
-        do {
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            
-            let object = try decoder.decode(mapper.self, from: data)
-            completion(.success(object))
-        } catch {
-            completion(.failure(error))
-        }
     }
 }
