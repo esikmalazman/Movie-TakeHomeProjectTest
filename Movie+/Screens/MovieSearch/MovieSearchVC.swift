@@ -22,7 +22,8 @@ Todo's
 - Display search results from query ✅
 - Setup UI for custom cell ✅
 - Save the search results in Core Data
-- Navigate selected results to Detail View
+- Navigate selected results to Detail View  ✅
+- Check if there any duplicate data by query and id if there new we just append it in data store
 
 3. Integrate Core Data
 - Setup Data Model to save results JSON
@@ -57,8 +58,7 @@ final class MovieSearchVC: UIViewController {
 extension MovieSearchVC : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let queryText = searchBar.text, !queryText.isEmpty else {return}
-        
-        presenter.insertRecentlySearchQueries(queryText)
+    
         presenter.clearMovieList()
         presenter.requestMovie(for: queryText)
     }

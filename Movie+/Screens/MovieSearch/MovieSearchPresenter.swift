@@ -14,12 +14,6 @@ protocol MovieSearchPresenterDelegate : AnyObject {
 }
 
 final class MovieSearchPresenter {
-#warning("Empty it once ready to implement Core Data")
-    var recentlySearchQueries : [String] = [
-        "Recent 1",
-        "Recent 2"
-    ]
-    
     var moviesList : [Movie] = []
     
     weak var delegate : MovieSearchPresenterDelegate?
@@ -31,6 +25,8 @@ final class MovieSearchPresenter {
             case .success(let data):
                 self.moviesList.append(contentsOf: data)
                 self.delegate?.renderMovieSearchResults(self, didLoadSuccess: self.moviesList)
+#warning("need to consider either need to save error query?")
+                self.cacheQueryResults(for: query, with: data)
             case .failure(let error):
                 self.delegate?.renderMovieSearchResults(self, didFailWithError: error)
             }
@@ -43,10 +39,6 @@ final class MovieSearchPresenter {
 }
 
 extension MovieSearchPresenter {
-    func insertRecentlySearchQueries(_ query : String) {
-        recentlySearchQueries.append(query)
-    }
-    
     func selectMovie(at index : Int) {
         let selectedMovie = moviesList[index]
         delegate?.navigateToMovieDetailScreen(self, didTapMovie: selectedMovie.id ?? 0)
@@ -57,5 +49,20 @@ extension MovieSearchPresenter {
     func movie(at index : Int) -> Movie {
         let movie = moviesList[index]
         return movie
+    }
+}
+
+extension MovieSearchPresenter {
+#warning("need to check if same query and duplicate data here")
+    func cacheQueryResults(for query : String, with results : [Movie]) {
+        #warning("might to refactor to use DI so we can test easy later")
+        let persistent = AppDelegate.shared.cdStack
+        
+        let newQueryResult = MovieQuery(context: persistent.context)
+        newQueryResult.id = UUID()
+        newQueryResult.query = query
+        newQueryResult.results = results.binaryData
+        
+        persistent.saveContext()
     }
 }
