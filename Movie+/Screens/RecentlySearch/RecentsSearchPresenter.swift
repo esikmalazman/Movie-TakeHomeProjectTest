@@ -55,7 +55,12 @@ extension RecentsSearchPresenter {
     }
     
     func removeRecentQueryResults(at indexPath: IndexPath) {
-        movieQueryList.remove(at: indexPath.row)
+        let indexToRemove = indexPath.row
+        
+        let queryToRemove = movieQueryList[indexToRemove]
+        coreDataStack.deleteContext(for: queryToRemove)
+        
+        movieQueryList.remove(at: indexToRemove)
         delegate?.refreshCacheQuerySearchResults(self)
     }
 }

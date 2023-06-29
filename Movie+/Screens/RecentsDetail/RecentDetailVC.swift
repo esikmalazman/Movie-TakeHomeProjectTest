@@ -8,7 +8,7 @@
 import UIKit
 
 final class RecentDetailVC: UIViewController {
-
+    
     @IBOutlet weak var moviesListTableView : UITableView!
     
     var movieList : [Movie] = []
@@ -47,6 +47,9 @@ private extension RecentDetailVC {
     func configureMovieListTableView() {
         moviesListTableView.register(MovieResultCell.nib(), forCellReuseIdentifier: MovieResultCell.identifier)
         
+        if #available(iOS 15.0, *) {
+            moviesListTableView.sectionHeaderTopPadding = 0
+        }
         moviesListTableView.dataSource = self
         moviesListTableView.reloadData()
     }
