@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="XVp-BP-oXx">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backdropPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="XVp-BP-oXx">
                     <rect key="frame" x="20" y="59" width="353" height="200"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="cnR-RQ-8en"/>
@@ -85,8 +85,8 @@
         </view>
     </objects>
     <resources>
+        <image name="backdropPlaceholder" width="351" height="199"/>
         <image name="bookmark" catalog="system" width="110" height="128"/>
-        <image name="sampleImage" width="400" height="400"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

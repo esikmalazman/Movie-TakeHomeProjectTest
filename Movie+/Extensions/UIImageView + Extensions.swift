@@ -23,6 +23,15 @@ extension ImageSize {
             return "/w154"
         }
     }
+    
+    var placeholderImageName : String {
+        switch self {
+        case .backdrop:
+            return "backdropPlaceholder"
+        case .thumbnail:
+            return "thumbnailPlaceholder"
+        }
+    }
 }
 
 extension UIImageView {
@@ -50,10 +59,10 @@ extension UIImageView {
             }
             
             DispatchQueue.main.async {
-#warning("should replace system image with dummy image")
                 let imageToCache = UIImage(data: data)
+                let placeHolderImage = UIImage(named:imageSize.placeholderImageName) ?? UIImage()
                 /// Store downloaded image data into cache
-                imageCache.setObject(imageToCache ?? UIImage(systemName: "livephoto.slash")!, forKey: NSString(string: urlString))
+                imageCache.setObject(imageToCache ?? placeHolderImage, forKey: NSString(string: urlString))
                 
                 self.image = imageToCache
             }

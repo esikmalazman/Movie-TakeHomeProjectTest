@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "posterPlaceholder.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
