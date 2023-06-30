@@ -9,8 +9,15 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var appDelegates : [UIApplicationDelegate] = [
+        PersistentDelegate()
+    ]
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        appDelegates.forEach { appDelegate in
+            _ = appDelegate.application?(application, didFinishLaunchingWithOptions: launchOptions)
+        }
         return true
     }
     
