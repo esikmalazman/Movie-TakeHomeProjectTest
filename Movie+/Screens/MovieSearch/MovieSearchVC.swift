@@ -23,14 +23,17 @@ Todo's
 - Setup UI for custom cell ✅
 - Save the search results in Core Data ✅
 - Navigate selected results to Detail View  ✅
-- Check if there any duplicate data by query and id if there new we just append it in data store
+- Check if there any duplicate data by query ✅
+- Check network connectivity
 
 3. Integrate Core Data
 - Setup Data Model to save results JSON ✅
 - Setup Class to handle D operation ✅
 - Implement Method to save the search movie results ✅
+- Save Cache Image in DB
 - Implement Method to save the favourites
 - Add date into attributes and we check if it more than specified time we clear the cache automatically
+
 
 4. Prepare Unit Test / UI Test
 - Validate all UI connected include delegate, navigation controller, title ✅
@@ -88,7 +91,6 @@ extension MovieSearchVC : UITableViewDataSource {
 // MARK:  UITableViewDelegate
 extension MovieSearchVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-#warning("need to consider the recent search after this")
         presenter.selectMovie(at: indexPath.row)
     }
 }
@@ -99,7 +101,7 @@ extension MovieSearchVC : MovieSearchPresenterDelegate {
     }
     
     func renderMovieSearchResults(_ presenter: MovieSearchPresenter, didFailWithError error: Error) {
-        reloadTableView()
+        showRequestMovieErrorAlert(error)
     }
     
     func navigateToMovieDetailScreen(_ presenter: MovieSearchPresenter, didTapMovie movieId : Int) {
@@ -132,6 +134,19 @@ private extension MovieSearchVC {
     func reloadTableView() {
         DispatchQueue.main.async {
             self.searchResultsTableView.reloadData()
+        }
+    }
+    
+    func showRequestMovieErrorAlert(_ error : Error) {
+        let title = "Your request cannot be processed at this time."
+        
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
+            self.presenter.requestMovie(for: self.searchBar.text ?? "")
+        }
+        let alert = showAlert(title, error.localizedDescription, [retryAction])
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
         }
     }
 }
