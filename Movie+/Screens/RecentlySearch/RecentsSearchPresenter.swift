@@ -22,7 +22,7 @@ final class RecentsSearchPresenter {
     weak var delegate : RecentsSearchPresenterDelegate?
     
     func requestCacheSearchQueries() {
-        coreDataStack.fetchContext(of: MovieQuery.self, with: []) { result in
+        coreDataStack.fetchContext(of: MovieQuery.self, with: [], and: nil) { result in
             self.movieQueryList = result
             
             self.delegate?.renderCacheQuerySearchResults(self, didLoadSuccess: self.movieQueryList)
@@ -42,6 +42,7 @@ extension RecentsSearchPresenter {
         let recentQuery = movieQueryList[indexPath.row]
         
         guard let data = recentQuery.results else {return}
+        
         GeneralUtils.parseData(data, mapper: [Movie].self) { result in
             switch result {
             case .success(let data):

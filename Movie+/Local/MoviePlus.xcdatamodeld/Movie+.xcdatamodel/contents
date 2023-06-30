@@ -6,9 +6,14 @@
         <attribute name="releaseDate" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="MovieQuery" representedClassName="MovieQuery" syncable="YES">
+    <entity name="MovieQuery" representedClassName=".MovieQuery" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="query" optional="YES" attributeType="String"/>
         <attribute name="results" optional="YES" attributeType="Binary"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="query"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>

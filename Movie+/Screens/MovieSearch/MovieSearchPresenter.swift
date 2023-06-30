@@ -25,7 +25,6 @@ final class MovieSearchPresenter {
             case .success(let data):
                 self.moviesList.append(contentsOf: data)
                 self.delegate?.renderMovieSearchResults(self, didLoadSuccess: self.moviesList)
-#warning("need to consider either need to save error query?")
                 self.cacheQueryResults(for: query, with: data)
             case .failure(let error):
                 self.delegate?.renderMovieSearchResults(self, didFailWithError: error)
@@ -55,14 +54,17 @@ extension MovieSearchPresenter {
 extension MovieSearchPresenter {
 #warning("need to check if same query and duplicate data here")
     func cacheQueryResults(for query : String, with results : [Movie]) {
-        #warning("might to refactor to use DI so we can test easy later")
+#warning("might to refactor to use DI so we can test easy later")
         let persistent = AppDelegate.shared.cdStack
         
         let newQueryResult = MovieQuery(context: persistent.context)
         newQueryResult.id = UUID()
-        newQueryResult.query = query
-        newQueryResult.results = results.binaryData
+        newQueryResult.query = query.lowercased()
         
-        persistent.saveContext()
+        GeneralUtils.encodeData(results) { data in
+            guard let data = try? data.get() else {return}
+            newQueryResult.results = data
+            persistent.saveContext()
+        }
     }
 }

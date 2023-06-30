@@ -23,7 +23,7 @@
             <subviews>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Nby-da-JEX">
                     <rect key="frame" x="0.0" y="59" width="393" height="56"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="D31-Sq-w6V"/>
                     </connections>

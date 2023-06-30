@@ -11,7 +11,7 @@ final class RecentsSearchVC: UIViewController {
     
     @IBOutlet weak var recentsTableView : UITableView!
     
-    #warning("refactor with custom cell")
+#warning("refactor with custom cell")
     let testCell = "testCell"
     
     var presenter : RecentsSearchPresenter = RecentsSearchPresenter()
@@ -50,12 +50,9 @@ extension RecentsSearchVC : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-#warning("handle delete action from Core Date when method ready")
         let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { _, _, _ in
             
             self.presenter.removeRecentQueryResults(at: indexPath)
-            
         }
         
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])

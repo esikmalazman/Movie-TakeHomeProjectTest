@@ -32,6 +32,9 @@ final class CoreDataStack {
             container.persistentStoreDescriptions = [description]
         }
         
+        /// Specify merge policy to handle conflicts when we add contrain in the Core Data model
+        /// NSMergeByPropertyStoreTrumpMergePolicy, allow to remain exist object if the constrain the same
+        container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         container.loadPersistentStores { _, error in
             if let error = error as? NSError {
                 fatalError("Error load persistent stores, \(error) : \(error.userInfo)")
@@ -56,9 +59,11 @@ final class CoreDataStack {
     
     func fetchContext<T:NSManagedObject>(of type : T.Type,
                                          with descriptors : [NSSortDescriptor],
+                                         and predicate : NSPredicate?,
                                          _ completion : @escaping ([T])->Void) {
         let object: NSFetchRequest<T> = NSFetchRequest<T>(entityName: "\(T.self)")
         object.sortDescriptors = descriptors
+        object.predicate = predicate
         
         do {
             let results = try context.fetch(object)

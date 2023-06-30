@@ -21,15 +21,16 @@ Todo's
 - Connect TV Datasource & Delegate ✅
 - Display search results from query ✅
 - Setup UI for custom cell ✅
-- Save the search results in Core Data
+- Save the search results in Core Data ✅
 - Navigate selected results to Detail View  ✅
 - Check if there any duplicate data by query and id if there new we just append it in data store
 
 3. Integrate Core Data
-- Setup Data Model to save results JSON
-- Setup Class to handle CRUD operation
-- Implement Method to save the search movie results
+- Setup Data Model to save results JSON ✅
+- Setup Class to handle D operation ✅
+- Implement Method to save the search movie results ✅
 - Implement Method to save the favourites
+- Add date into attributes and we check if it more than specified time we clear the cache automatically
 
 4. Prepare Unit Test / UI Test
 - Validate all UI connected include delegate, navigation controller, title ✅
@@ -58,7 +59,7 @@ final class MovieSearchVC: UIViewController {
 extension MovieSearchVC : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let queryText = searchBar.text, !queryText.isEmpty else {return}
-    
+        
         presenter.clearMovieList()
         presenter.requestMovie(for: queryText)
     }
@@ -67,19 +68,9 @@ extension MovieSearchVC : UISearchBarDelegate {
         clearSearchBar()
     }
 }
-/**
- 1. Check if movie list empty, show recently search
- 2. Search begin, recent search removed
- 3. Check if cancel and no query, show the recent search again
- 4. If results
-**/
 
 // MARK:  UITableViewDataSource
 extension MovieSearchVC : UITableViewDataSource {
-#warning("as for now we display 1 section for results of query, then later we check if there any cache search results if have we show 2 section")
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.moviesList.count
@@ -97,7 +88,7 @@ extension MovieSearchVC : UITableViewDataSource {
 // MARK:  UITableViewDelegate
 extension MovieSearchVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        #warning("need to consider the recent search after this")
+#warning("need to consider the recent search after this")
         presenter.selectMovie(at: indexPath.row)
     }
 }

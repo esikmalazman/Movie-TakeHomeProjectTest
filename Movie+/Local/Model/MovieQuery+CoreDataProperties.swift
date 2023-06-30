@@ -2,7 +2,7 @@
 //  MovieQuery+CoreDataProperties.swift
 //  Movie+
 //
-//  Created by Ikmal Azman on 29/06/2023.
+//  Created by Ikmal Azman on 30/06/2023.
 //
 //
 
@@ -11,17 +11,17 @@ import CoreData
 
 
 extension MovieQuery {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<MovieQuery> {
         return NSFetchRequest<MovieQuery>(entityName: "MovieQuery")
     }
-
+    
     @NSManaged public var id: UUID?
     @NSManaged public var query: String?
     @NSManaged public var results: Data?
-
+    
 }
 
 extension MovieQuery : Identifiable {
-
+    
 }
