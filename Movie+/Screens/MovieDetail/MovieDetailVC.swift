@@ -33,8 +33,8 @@ final class MovieDetailVC: UIViewController {
         presenter.requestMovieDetails()
     }
     
-    func setMovieId(_ id : Int) {
-        presenter.setMovieId(id)
+    func setMovieDetail(_ movie : Movie) {
+        presenter.setMovie(movie)
     }
 }
 
@@ -42,10 +42,19 @@ final class MovieDetailVC: UIViewController {
 extension MovieDetailVC {
 #warning("save favourites in Core Data")
     @IBAction func addToFavouriteTapped(_ sender: UIButton) {
+        presenter.saveMovieToFavourites()
     }
 }
 
 extension MovieDetailVC : MovieDetailPresenterDelegate {
+    func saveMovieDetails(_ presenter: MovieDetailPresenter, isBoomarkSaved: Bool) {
+        showBookmarkMovieSuccessAlert()
+    }
+    
+    func saveMovieDetails(_ presenter: MovieDetailPresenter, isBoomarkSaved: Bool, didFailWithError error: Error) {
+        showBookmarkMovieErrorAlert(error)
+    }
+    
     func renderMovieDetails(_ presenter: MovieDetailPresenter, didLoadSuccess data: MovieDetail) {
         DispatchQueue.main.async {
             self.configureMovieDetails(data)
@@ -70,6 +79,7 @@ extension MovieDetailVC {
     func configureViewAppearance() {
         posterImageView.layer.cornerRadius = 10
         addToFavouriteBtn.layer.cornerRadius = 10
+        addToFavouriteBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
     }
     
     func showRequestMovieDetailErrorAlert(_ error : Error) {
@@ -77,6 +87,22 @@ extension MovieDetailVC {
             self.presenter.requestMovieDetails()
         }
         
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func showBookmarkMovieErrorAlert(_ error : Error) {
+        let alert = showErrorAlert(error.localizedDescription) {
+            self.presenter.saveMovieToFavourites()
+        }
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func showBookmarkMovieSuccessAlert() {
+        let alert = showSuccessAlert("Woohoo!", "Movie succefully add to bookmarks")
         DispatchQueue.main.async {
             self.present(alert, animated: true)
         }

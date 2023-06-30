@@ -10,7 +10,7 @@ import Foundation
 protocol MovieSearchPresenterDelegate : AnyObject {
     func renderMovieSearchResults(_ presenter :MovieSearchPresenter, didLoadSuccess data : [Movie])
     func renderMovieSearchResults(_ presenter :MovieSearchPresenter, didFailWithError error : Error)
-    func navigateToMovieDetailScreen(_ presenter :MovieSearchPresenter, didTapMovie movieId : Int)
+    func navigateToMovieDetailScreen(_ presenter :MovieSearchPresenter, didTapMovie movie : Movie)
 }
 
 final class MovieSearchPresenter {
@@ -19,7 +19,7 @@ final class MovieSearchPresenter {
     weak var delegate : MovieSearchPresenterDelegate?
     var movieInteractor : MovieInteractorContract = MovieInteractor()
     
-    lazy var coreDataStack = CoreDataStack()
+    lazy var coreDataStack : CoreDataStack = PersistentDelegate.shared.coredataStack
     
     func requestMovie(for query: String) {
         movieInteractor.fetchMovieTitle(for: query) { result in
@@ -42,7 +42,7 @@ final class MovieSearchPresenter {
 extension MovieSearchPresenter {
     func selectMovie(at index : Int) {
         let selectedMovie = moviesList[index]
-        delegate?.navigateToMovieDetailScreen(self, didTapMovie: selectedMovie.id ?? 0)
+        delegate?.navigateToMovieDetailScreen(self, didTapMovie: selectedMovie)
     }
 }
 

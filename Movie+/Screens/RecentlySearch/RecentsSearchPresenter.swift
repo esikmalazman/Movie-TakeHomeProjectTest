@@ -17,7 +17,7 @@ protocol RecentsSearchPresenterDelegate : AnyObject {
 final class RecentsSearchPresenter {
     
     var movieQueryList : [MovieQuery] = []
-    var coreDataStack : CoreDataStack = CoreDataStack()
+    var coreDataStack : CoreDataStack = PersistentDelegate.shared.coredataStack
     
     weak var delegate : RecentsSearchPresenterDelegate?
     

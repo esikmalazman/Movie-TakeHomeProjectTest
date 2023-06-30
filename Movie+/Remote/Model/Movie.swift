@@ -23,5 +23,4 @@ struct MovieDetail : Codable {
     let overview : String?
     let releaseDate : String?
     let backdropPath : String?
-    let posterPath : String?
 }

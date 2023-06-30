@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,15 +50,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZw-h6-jxN">
-                    <rect key="frame" x="20" y="429" width="353" height="50"/>
+                    <rect key="frame" x="20" y="763" width="353" height="45"/>
                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="FLs-wT-mEM"/>
+                        <constraint firstAttribute="height" constant="45" id="FLs-wT-mEM"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Button" image="bookmark" catalog="system"/>
-                    <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system" title="Add to Favourite" imagePadding="5"/>
+                    <state key="normal" title="Add to Favourite">
+                        <imageReference key="image" image="bookmark" catalog="system" symbolScale="default"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15"/>
+                    </state>
                     <connections>
                         <action selector="addToFavouriteTapped:" destination="-1" eventType="touchUpInside" id="oUy-7i-bTc"/>
                     </connections>
@@ -67,7 +70,6 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="XVp-BP-oXx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="0d5-wr-0ws"/>
-                <constraint firstItem="KZw-h6-jxN" firstAttribute="top" secondItem="RlP-Td-bM3" secondAttribute="bottom" constant="45" id="2YR-cF-Kfk"/>
                 <constraint firstItem="f85-VI-amn" firstAttribute="top" secondItem="7CH-6D-Ij0" secondAttribute="bottom" constant="10" id="2yC-VE-9ei"/>
                 <constraint firstItem="7CH-6D-Ij0" firstAttribute="trailing" secondItem="XVp-BP-oXx" secondAttribute="trailing" id="3dF-70-i4k"/>
                 <constraint firstItem="7CH-6D-Ij0" firstAttribute="leading" secondItem="XVp-BP-oXx" secondAttribute="leading" id="CL5-Be-d6c"/>
@@ -78,6 +80,7 @@
                 <constraint firstItem="KZw-h6-jxN" firstAttribute="trailing" secondItem="XVp-BP-oXx" secondAttribute="trailing" id="kvV-GX-X3H"/>
                 <constraint firstItem="RlP-Td-bM3" firstAttribute="leading" secondItem="XVp-BP-oXx" secondAttribute="leading" id="l6a-8m-RPh"/>
                 <constraint firstItem="RlP-Td-bM3" firstAttribute="trailing" secondItem="XVp-BP-oXx" secondAttribute="trailing" id="loK-WT-SWz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KZw-h6-jxN" secondAttribute="bottom" constant="10" id="qTt-Jr-0k8"/>
                 <constraint firstItem="f85-VI-amn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sBt-Su-sJw"/>
                 <constraint firstItem="XVp-BP-oXx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="w0E-jd-qD5"/>
             </constraints>

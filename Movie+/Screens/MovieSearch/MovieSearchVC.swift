@@ -9,31 +9,16 @@ import UIKit
 
 #warning("""
 Todo's
-1. Searchbar to search movies by title
-- Setup UI for Searchbar ✅
-- Connect delegate for Searchbar ✅
-- Setup & Perform network request to fetch query results ✅
-- Add validation to see if there any search query and results before, if has we show them on the screen list before start search, upon start search we clear the results from table view ✅
-- When user in offline mode, we direct to previously movie fetch (Bonus)
+Bonus
 
-2. Display results in table view
-- Setup UI for TableView ✅
-- Connect TV Datasource & Delegate ✅
-- Display search results from query ✅
-- Setup UI for custom cell ✅
-- Save the search results in Core Data ✅
-- Navigate selected results to Detail View  ✅
-- Check if there any duplicate data by query ✅
-- Check network connectivity
+1. Check network connectivity, if online we direct to previously movie fetch (Bonus) by show toast UI
 
-3. Integrate Core Data
-- Setup Data Model to save results JSON ✅
-- Setup Class to handle D operation ✅
-- Implement Method to save the search movie results ✅
-- Save Cache Image in DB
+2. Save favourites
 - Implement Method to save the favourites
-- Add date into attributes and we check if it more than specified time we clear the cache automatically
+- Add date into attributes and we check if it more than specified time we clear the cache automatically (optional)
 
+3. Refine UI
+- Refine UI for Recents Search to make the row can be deleted
 
 4. Prepare Unit Test / UI Test
 - Validate all UI connected include delegate, navigation controller, title ✅
@@ -104,9 +89,9 @@ extension MovieSearchVC : MovieSearchPresenterDelegate {
         showRequestMovieErrorAlert(error)
     }
     
-    func navigateToMovieDetailScreen(_ presenter: MovieSearchPresenter, didTapMovie movieId : Int) {
+    func navigateToMovieDetailScreen(_ presenter: MovieSearchPresenter, didTapMovie movie : Movie) {
         let movieDetailVC = MovieDetailVC()
-        movieDetailVC.setMovieId(movieId)
+        movieDetailVC.setMovieDetail(movie)
         navigationController?.pushViewController(movieDetailVC, animated: true)
     }
 }
