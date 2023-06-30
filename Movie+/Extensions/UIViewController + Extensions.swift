@@ -8,16 +8,21 @@
 import UIKit
 
 extension UIViewController {
-    func showAlert(_ title : String?,
-                   _ message : String?,
-                   _ actions : [UIAlertAction]) -> UIAlertController {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    func showErrorAlert(_ message : String?,
+                        _ onRetryAction : @escaping () -> Void) -> UIAlertController {
         
-        for action in actions {
-            alertController.addAction(action)
+        let alertController = UIAlertController(
+            title: "Oops! Something went wrong!",
+            message: message,
+            preferredStyle: .alert)
+        
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
+            onRetryAction()
         }
         
         let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alertController.addAction(retryAction)
         alertController.addAction(okAction)
         
         return alertController

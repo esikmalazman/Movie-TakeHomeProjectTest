@@ -19,6 +19,8 @@ final class MovieSearchPresenter {
     weak var delegate : MovieSearchPresenterDelegate?
     var movieInteractor : MovieInteractorContract = MovieInteractor()
     
+    lazy var coreDataStack = CoreDataStack(modelName: .MoviePlus)
+    
     func requestMovie(for query: String) {
         movieInteractor.fetchMovieTitle(for: query) { result in
             switch result {
@@ -52,19 +54,16 @@ extension MovieSearchPresenter {
 }
 
 extension MovieSearchPresenter {
-#warning("need to check if same query and duplicate data here")
     func cacheQueryResults(for query : String, with results : [Movie]) {
-#warning("might to refactor to use DI so we can test easy later")
-        let persistent = AppDelegate.shared.cdStack
         
-        let newQueryResult = MovieQuery(context: persistent.context)
+        let newQueryResult = MovieQuery(context: coreDataStack.context)
         newQueryResult.id = UUID()
         newQueryResult.query = query.lowercased()
         
         GeneralUtils.encodeData(results) { data in
             guard let data = try? data.get() else {return}
             newQueryResult.results = data
-            persistent.saveContext()
+            self.coreDataStack.saveContext()
         }
     }
 }

@@ -40,7 +40,7 @@ final class MovieDetailVC: UIViewController {
 
 // MARK:  Actions
 extension MovieDetailVC {
-    #warning("save favourites in Core Data")
+#warning("save favourites in Core Data")
     @IBAction func addToFavouriteTapped(_ sender: UIButton) {
     }
 }
@@ -53,7 +53,7 @@ extension MovieDetailVC : MovieDetailPresenterDelegate {
     }
     
     func renderMovieDetails(_ presenter: MovieDetailPresenter, didFailWithError error: Error) {
-#warning("handle error with alert")
+        showRequestMovieDetailErrorAlert(error)
     }
 }
 
@@ -70,5 +70,15 @@ extension MovieDetailVC {
     func configureViewAppearance() {
         posterImageView.layer.cornerRadius = 10
         addToFavouriteBtn.layer.cornerRadius = 10
+    }
+    
+    func showRequestMovieDetailErrorAlert(_ error : Error) {
+        let alert = showErrorAlert(error.localizedDescription) {
+            self.presenter.requestMovieDetails()
+        }
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
     }
 }

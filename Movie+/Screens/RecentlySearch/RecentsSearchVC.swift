@@ -51,7 +51,6 @@ extension RecentsSearchVC : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { _, _, _ in
-            
             self.presenter.removeRecentQueryResults(at: indexPath)
         }
         
@@ -72,8 +71,8 @@ extension RecentsSearchVC : RecentsSearchPresenterDelegate {
         reloadMovieListTableView()
     }
     
-    func renderCacheQuerySearchResults(_ presenter: MovieSearchPresenter, didFailWithError error: Error) {
-#warning("handle error")
+    func renderCacheQuerySearchResults(_ presenter: RecentsSearchPresenter, didFailWithError error: Error) {
+        showRequestCacheMovieErrorAlert(error)
     }
     
     func refreshCacheQuerySearchResults(_ presenter: RecentsSearchPresenter) {
@@ -94,6 +93,16 @@ private extension RecentsSearchVC {
     func reloadMovieListTableView() {
         DispatchQueue.main.async {
             self.recentsTableView.reloadData()
+        }
+    }
+    
+    func showRequestCacheMovieErrorAlert(_ error : Error) {
+        let alert = showErrorAlert(error.localizedDescription) {
+            self.presenter.requestCacheSearchQueries()
+        }
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
         }
     }
 }

@@ -138,12 +138,9 @@ private extension MovieSearchVC {
     }
     
     func showRequestMovieErrorAlert(_ error : Error) {
-        let title = "Your request cannot be processed at this time."
-        
-        let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
+        let alert = showErrorAlert(error.localizedDescription) {
             self.presenter.requestMovie(for: self.searchBar.text ?? "")
         }
-        let alert = showAlert(title, error.localizedDescription, [retryAction])
         
         DispatchQueue.main.async {
             self.present(alert, animated: true)
