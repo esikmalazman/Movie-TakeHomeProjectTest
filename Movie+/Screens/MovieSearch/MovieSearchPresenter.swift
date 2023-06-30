@@ -19,7 +19,7 @@ final class MovieSearchPresenter {
     weak var delegate : MovieSearchPresenterDelegate?
     var movieInteractor : MovieInteractorContract = MovieInteractor()
     
-    lazy var coreDataStack = CoreDataStack(modelName: .MoviePlus)
+    lazy var coreDataStack = CoreDataStack()
     
     func requestMovie(for query: String) {
         movieInteractor.fetchMovieTitle(for: query) { result in

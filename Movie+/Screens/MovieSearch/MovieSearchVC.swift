@@ -13,7 +13,7 @@ Todo's
 - Setup UI for Searchbar ✅
 - Connect delegate for Searchbar ✅
 - Setup & Perform network request to fetch query results ✅
-- Add validation to see if there any search query and results before, if has we show them on the screen list before start search, upon start search we clear the results from table view
+- Add validation to see if there any search query and results before, if has we show them on the screen list before start search, upon start search we clear the results from table view ✅
 - When user in offline mode, we direct to previously movie fetch (Bonus)
 
 2. Display results in table view

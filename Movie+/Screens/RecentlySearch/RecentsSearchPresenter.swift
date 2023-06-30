@@ -17,15 +17,20 @@ protocol RecentsSearchPresenterDelegate : AnyObject {
 final class RecentsSearchPresenter {
     
     var movieQueryList : [MovieQuery] = []
-    var coreDataStack : CoreDataStack = CoreDataStack(modelName: .MoviePlus)
+    var coreDataStack : CoreDataStack = CoreDataStack()
     
     weak var delegate : RecentsSearchPresenterDelegate?
     
     func requestCacheSearchQueries() {
         coreDataStack.fetchContext(of: MovieQuery.self, with: [], and: nil) { result in
-            self.movieQueryList = result
             
-            self.delegate?.renderCacheQuerySearchResults(self, didLoadSuccess: self.movieQueryList)
+            switch result {
+            case .success(let movies):
+                self.movieQueryList = movies
+                self.delegate?.renderCacheQuerySearchResults(self, didLoadSuccess: self.movieQueryList)
+            case .failure(let error):
+                self.delegate?.renderCacheQuerySearchResults(self, didFailWithError: error)
+            }
         }
     }
 }

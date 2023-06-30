@@ -43,33 +43,33 @@ final class CoreDataStack {
         return container
     }()
     
-    init(modelName: ModelName , storageType: StorageType = .persistent) {
+    init(modelName: ModelName = .MoviePlus , storageType: StorageType = .persistent) {
         self.modelName = modelName
         self.storageType = storageType
     }
     
-    func saveContext() {
+    func saveContext(_ completionError : @escaping (Error) -> Void = {_ in }) {
         guard context.hasChanges else {return}
         do {
             try context.save()
         } catch {
-            print("Error saving context into Core Data : \(error.localizedDescription)")
+            completionError(error)
         }
     }
     
     func fetchContext<T:NSManagedObject>(of type : T.Type,
                                          with descriptors : [NSSortDescriptor],
                                          and predicate : NSPredicate?,
-                                         _ completion : @escaping ([T])->Void) {
+                                         _ completion : @escaping (Result<[T], Error>)->Void) {
         let object: NSFetchRequest<T> = NSFetchRequest<T>(entityName: "\(T.self)")
         object.sortDescriptors = descriptors
         object.predicate = predicate
         
         do {
             let results = try context.fetch(object)
-            completion(results)
+            completion(.success(results))
         } catch {
-            print("Error load context for type \(type), \(error.localizedDescription)")
+            completion(.failure(error))
         }
     }
     
