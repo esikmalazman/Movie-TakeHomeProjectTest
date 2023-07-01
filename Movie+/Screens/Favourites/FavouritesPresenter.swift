@@ -17,11 +17,11 @@ protocol FavouritesPresenterDelegate : AnyObject {
 final class FavouritesPresenter {
     
     var favouriteList : [MovieFavourites] = []
-    var coreDataStack : CoreDataStack = PersistentDelegate.shared.coredataStack
+    var movieStorageInteractor : MovieStorageInteractor = MovieStorageInteractor()
     weak var delegate : FavouritesPresenterDelegate?
     
     func requestFavouritesMovie() {
-        coreDataStack.fetchContext(of: MovieFavourites.self, with: [], and: nil) { result in
+        movieStorageInteractor.fetchBookmarkedMovie { result in
             
             switch result {
             case .success(let data):
@@ -53,7 +53,7 @@ extension FavouritesPresenter {
         let indexToRemove = indexPath.row
         
         let favouriteMovie = favouriteList[indexToRemove]
-        coreDataStack.deleteContext(for: favouriteMovie)
+        movieStorageInteractor.deleteSelectedBookmarkedMovie(favouriteMovie)
         
         favouriteList.remove(at: indexToRemove)
         delegate?.refreshFavouriteMovie(self)

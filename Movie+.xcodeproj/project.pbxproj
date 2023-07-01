@@ -56,6 +56,7 @@
 		7FF756E52A50310500953C94 /* MovieQuery+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756E32A50310500953C94 /* MovieQuery+CoreDataProperties.swift */; };
 		7FF756EC2A507E9E00953C94 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756EA2A507E9E00953C94 /* EmptyState.swift */; };
 		7FF756ED2A507E9E00953C94 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF756EB2A507E9E00953C94 /* EmptyState.xib */; };
+		7FF756EF2A50C2C500953C94 /* MovieStorageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756EE2A50C2C500953C94 /* MovieStorageInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		7FF756E32A50310500953C94 /* MovieQuery+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieQuery+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7FF756EA2A507E9E00953C94 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		7FF756EB2A507E9E00953C94 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
+		7FF756EE2A50C2C500953C94 /* MovieStorageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStorageInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 				7FF756C92A4EB5C800953C94 /* Model */,
 				7F54057A2A4C6FAD0063AC68 /* MoviePlus.xcdatamodeld */,
 				7F0294752A4D46BF00BAA89D /* CoreDataStack.swift */,
+				7FF756EE2A50C2C500953C94 /* MovieStorageInteractor.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				7FF756D72A4F66A500953C94 /* MovieFavourites+CoreDataProperties.swift in Sources */,
 				7FF756EC2A507E9E00953C94 /* EmptyState.swift in Sources */,
 				7F1954002A44BAB40058379C /* MovieDetailVC.swift in Sources */,
+				7FF756EF2A50C2C500953C94 /* MovieStorageInteractor.swift in Sources */,
 				7FD404AC2A47A7D500CFBE41 /* MovieInteractor.swift in Sources */,
 				7FF756CF2A4F1B3100953C94 /* UIViewController + Extensions.swift in Sources */,
 				7F4BBF272A4A06E5004641CC /* RecentlySearchCell.swift in Sources */,

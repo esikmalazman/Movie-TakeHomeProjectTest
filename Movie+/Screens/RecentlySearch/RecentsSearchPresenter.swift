@@ -17,13 +17,12 @@ protocol RecentsSearchPresenterDelegate : AnyObject {
 final class RecentsSearchPresenter {
     
     var movieQueryList : [MovieQuery] = []
-    var coreDataStack : CoreDataStack = PersistentDelegate.shared.coredataStack
+    var movieStorageInteractor : MovieStorageInteractor = MovieStorageInteractor()
     
     weak var delegate : RecentsSearchPresenterDelegate?
     
     func requestCacheSearchQueries() {
-        coreDataStack.fetchContext(of: MovieQuery.self, with: [], and: nil) { result in
-            
+        movieStorageInteractor.fetchSavedSearch { result in
             switch result {
             case .success(let movies):
                 self.movieQueryList = movies
@@ -62,7 +61,7 @@ extension RecentsSearchPresenter {
         let indexToRemove = indexPath.row
         
         let queryToRemove = movieQueryList[indexToRemove]
-        coreDataStack.deleteContext(for: queryToRemove)
+        movieStorageInteractor.deleteSelectedSearch(queryToRemove)
         
         movieQueryList.remove(at: indexToRemove)
         delegate?.refreshCacheQuerySearchResults(self)

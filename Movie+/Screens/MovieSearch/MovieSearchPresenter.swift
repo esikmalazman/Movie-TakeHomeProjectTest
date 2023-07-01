@@ -22,8 +22,6 @@ final class MovieSearchPresenter {
     var movieInteractor : MovieInteractorContract = MovieInteractor()
     var movieStorageInteractor : MovieStorageInteractor = MovieStorageInteractor()
     
-    lazy var coreDataStack : CoreDataStack = PersistentDelegate.shared.coredataStack
-    
     func requestMovie(for query: String) {
         movieInteractor.fetchMovieTitle(for: query) { result in
             switch result {
