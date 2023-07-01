@@ -54,6 +54,8 @@
 		7FF756E12A5029E500953C94 /* RecentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF756DF2A5029E500953C94 /* RecentCell.xib */; };
 		7FF756E42A50310500953C94 /* MovieQuery+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756E22A50310500953C94 /* MovieQuery+CoreDataClass.swift */; };
 		7FF756E52A50310500953C94 /* MovieQuery+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756E32A50310500953C94 /* MovieQuery+CoreDataProperties.swift */; };
+		7FF756EC2A507E9E00953C94 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756EA2A507E9E00953C94 /* EmptyState.swift */; };
+		7FF756ED2A507E9E00953C94 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF756EB2A507E9E00953C94 /* EmptyState.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		7FF756DF2A5029E500953C94 /* RecentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCell.xib; sourceTree = "<group>"; };
 		7FF756E22A50310500953C94 /* MovieQuery+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieQuery+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7FF756E32A50310500953C94 /* MovieQuery+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieQuery+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7FF756EA2A507E9E00953C94 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
+		7FF756EB2A507E9E00953C94 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 				7F0C0CF32A45F05D00C710D7 /* MovieResultCell.xib */,
 				7F4BBF252A4A06E5004641CC /* RecentlySearchCell.swift */,
 				7F4BBF262A4A06E5004641CC /* RecentlySearchCell.xib */,
+				7FF756EA2A507E9E00953C94 /* EmptyState.swift */,
+				7FF756EB2A507E9E00953C94 /* EmptyState.xib */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F20D9D02A44BAF8002A8937 /* MovieDetailVC.xib in Resources */,
+				7FF756ED2A507E9E00953C94 /* EmptyState.xib in Resources */,
 				7F02947C2A4D616F00BAA89D /* RecentDetailVC.xib in Resources */,
 				7F1953F72A44BA6F0058379C /* LaunchScreen.storyboard in Resources */,
 				7F1953F42A44BA6F0058379C /* Assets.xcassets in Resources */,
@@ -501,6 +508,7 @@
 				7F54057C2A4C6FAD0063AC68 /* MoviePlus.xcdatamodeld in Sources */,
 				7F1953EB2A44BA6C0058379C /* AppDelegate.swift in Sources */,
 				7FF756D72A4F66A500953C94 /* MovieFavourites+CoreDataProperties.swift in Sources */,
+				7FF756EC2A507E9E00953C94 /* EmptyState.swift in Sources */,
 				7F1954002A44BAB40058379C /* MovieDetailVC.swift in Sources */,
 				7FD404AC2A47A7D500CFBE41 /* MovieInteractor.swift in Sources */,
 				7FF756CF2A4F1B3100953C94 /* UIViewController + Extensions.swift in Sources */,
