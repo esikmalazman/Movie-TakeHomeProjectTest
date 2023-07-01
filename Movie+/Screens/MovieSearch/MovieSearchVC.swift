@@ -13,15 +13,13 @@ Bonus
 
 1. Check network connectivity, if online we direct to previously movie fetch (Bonus) by show toast UI
 
-2. Save favourites
-- Add date into attributes and we check if it more than specified time we clear the cache automatically (optional)
-
-3. Refine UI
-- Refine UI for Recents Search to make the row can be deleted
+2. Add date into attributes and we check if it more than specified time we clear the cache automatically (optional)
 
 4. Prepare Unit Test / UI Test
 - Validate all UI connected include delegate, navigation controller, title ✅
 - Prepare to test Network & Core Data
+
+5. Refactor Image to use safe string type
 """)
 
 final class MovieSearchVC: UIViewController {

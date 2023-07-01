@@ -39,7 +39,7 @@ extension RecentDetailVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Recently search result for : \(recentsQueryTitle)"
+        return "Search result for : \(recentsQueryTitle)"
     }
 }
 

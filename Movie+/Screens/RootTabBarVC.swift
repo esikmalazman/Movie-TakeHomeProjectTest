@@ -29,7 +29,7 @@ private extension RootTabBarVC {
         let recentlySearchVC = createNavBarVC(RecentsSearchVC(), "Recents", "clock.arrow.circlepath")
         let favouritesVC = createNavBarVC(FavouritesVC(), "Favourites", "star.fill")
         
-        viewControllers = [movieSearchVC, favouritesVC,recentlySearchVC]
+        viewControllers = [movieSearchVC, recentlySearchVC, favouritesVC]
         
         tabBar.isTranslucent = false
         tabBar.backgroundColor = .white

@@ -11,9 +11,6 @@ final class RecentsSearchVC: UIViewController {
     
     @IBOutlet weak var recentsTableView : UITableView!
     
-#warning("refactor with custom cell")
-    let testCell = "testCell"
-    
     var presenter : RecentsSearchPresenter = RecentsSearchPresenter()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,6 +20,8 @@ final class RecentsSearchVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Recents Search"
+        
         presenter.delegate = self
         configureRecentsTableView()
     }
@@ -37,8 +36,8 @@ extension RecentsSearchVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let movieQuery = presenter.recentQueries(at: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: testCell, for: indexPath)
-        cell.textLabel?.text = movieQuery.query
+        let cell = tableView.dequeueReusableCell(withIdentifier: RecentCell.identifier, for: indexPath) as! RecentCell
+        cell.configure(movieQuery)
         return cell
     }
 }
@@ -82,12 +81,12 @@ extension RecentsSearchVC : RecentsSearchPresenterDelegate {
 
 private extension RecentsSearchVC {
     func configureRecentsTableView() {
-        title = "Recents Search"
-        navigationController?.navigationBar.prefersLargeTitles = true
         
-        recentsTableView.register(UITableViewCell.self, forCellReuseIdentifier: testCell)
+        recentsTableView.register(RecentCell.nib(), forCellReuseIdentifier: RecentCell.identifier)
         recentsTableView.delegate = self
         recentsTableView.dataSource = self
+        
+        recentsTableView.separatorStyle = .none
     }
     
     func reloadMovieListTableView() {

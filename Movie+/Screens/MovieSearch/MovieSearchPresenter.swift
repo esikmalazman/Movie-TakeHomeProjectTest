@@ -60,6 +60,11 @@ extension MovieSearchPresenter {
         newQueryResult.id = UUID()
         newQueryResult.query = query.lowercased()
         
+        let dataFormatter = DateFormatter()
+        dataFormatter.dateFormat = "MMM d, h:mm a"
+        let searchDate = dataFormatter.string(from: Date())
+        newQueryResult.date = searchDate
+        
         GeneralUtils.encodeData(results) { data in
             guard let data = try? data.get() else {return}
             newQueryResult.results = data
