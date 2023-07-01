@@ -109,7 +109,7 @@ private extension MovieDetailVC {
     }
     
     func configureBookmarkState(_ state : Bool) {
-        let image = UIImage(systemName: state ? "bookmark.fill" : "bookmark")
+        let image = UIImage(systemName: state ? SFImage.bookmarked.name : SFImage.bookmark.name)
         addToFavouriteBtn.setImage(image, for: .normal)
         
         if state {

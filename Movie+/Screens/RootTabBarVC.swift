@@ -7,6 +7,31 @@
 
 import UIKit
 
+enum SFImage {
+    case search
+    case recents
+    case favourites
+    case bookmark
+    case bookmarked
+}
+
+extension SFImage {
+    var name : String {
+        switch self {
+        case .search:
+            return "magnifyingglass"
+        case .recents:
+            return "clock.arrow.circlepath"
+        case .favourites:
+            return "star.fill"
+        case .bookmark:
+            return "bookmark"
+        case .bookmarked:
+            return "bookmark.fill"
+        }
+    }
+}
+
 final class RootTabBarVC : UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +50,9 @@ private extension RootTabBarVC {
     }
     
     func setupTabViewControllers() {
-        let movieSearchVC = createNavBarVC(MovieSearchVC(), "Search", "magnifyingglass")
-        let recentlySearchVC = createNavBarVC(RecentsSearchVC(), "Recents", "clock.arrow.circlepath")
-        let favouritesVC = createNavBarVC(FavouritesVC(), "Favourites", "star.fill")
+        let movieSearchVC = createNavBarVC(MovieSearchVC(), "Search", SFImage.search.name)
+        let recentlySearchVC = createNavBarVC(RecentsSearchVC(), "Recents", SFImage.recents.name)
+        let favouritesVC = createNavBarVC(FavouritesVC(), "Favourites", SFImage.favourites.name)
         
         viewControllers = [movieSearchVC, recentlySearchVC, favouritesVC]
         

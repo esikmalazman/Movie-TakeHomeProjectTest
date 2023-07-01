@@ -10,13 +10,14 @@ import UIKit
 #warning("""
 Todo's
 Bonus
-2. Add date into attributes and we check if it more than specified time we clear the cache automatically (optional)
+1. Add date into attributes and we check if it more than specified time we clear the cache automatically (optional)
 
-4. Prepare Unit Test / UI Test
+2. Prepare Unit Test / UI Test
 - Validate all UI connected include delegate, navigation controller, title ✅
 - Prepare to test Network & Core Data
 
-5. Refactor Image to use safe string type
+3. Refactor Core Data to use dedicated helper instead
+
 """)
 
 final class MovieSearchVC: UIViewController {
