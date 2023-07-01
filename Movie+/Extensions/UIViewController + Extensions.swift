@@ -28,7 +28,7 @@ extension UIViewController {
         return alertController
     }
     
-    func showSuccessAlert(_ title :String?, _ message : String?) -> UIAlertController {
+    func showBasicAlert(_ title :String?, _ message : String?) -> UIAlertController {
         
         let alertController = UIAlertController(
             title: title,

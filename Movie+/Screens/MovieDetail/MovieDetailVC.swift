@@ -102,7 +102,7 @@ private extension MovieDetailVC {
     func showBookmarkMovieSuccessAlert() {
         guard presenter.bookmarked else {return}
         
-        let alert = showSuccessAlert("Woohoo!", "Movie succefully add to bookmarks")
+        let alert = showBasicAlert("Woohoo!", "Movie succefully add to bookmarks")
         DispatchQueue.main.async {
             self.present(alert, animated: true)
         }

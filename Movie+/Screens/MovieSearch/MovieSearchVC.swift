@@ -82,6 +82,10 @@ extension MovieSearchVC : UITableViewDelegate {
 }
 
 extension MovieSearchVC : MovieSearchPresenterDelegate {
+    func saveMovieSearchResults(_ presenter: MovieSearchPresenter, didFailWithError error: Error) {
+        showSaveMovieErrorAlert(error)
+    }
+    
     func renderMovieSearchResults(_ presenter: MovieSearchPresenter, didLoadSuccess data: [Movie]) {
         reloadTableView()
         shouldHideEmptyState(true)
@@ -133,6 +137,14 @@ private extension MovieSearchVC {
         let alert = showErrorAlert(error.localizedDescription) {
             self.presenter.requestMovie(for: self.searchBar.text ?? "")
         }
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func showSaveMovieErrorAlert(_ error : Error) {
+        let alert = showBasicAlert("Oops! Something went wrong!", error.localizedDescription)
         
         DispatchQueue.main.async {
             self.present(alert, animated: true)

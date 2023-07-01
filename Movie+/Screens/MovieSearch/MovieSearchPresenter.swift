@@ -10,7 +10,9 @@ import Foundation
 protocol MovieSearchPresenterDelegate : AnyObject {
     func renderMovieSearchResults(_ presenter :MovieSearchPresenter, didLoadSuccess data : [Movie])
     func renderMovieSearchResults(_ presenter :MovieSearchPresenter, didFailWithError error : Error)
+    func saveMovieSearchResults(_ presenter :MovieSearchPresenter, didFailWithError error : Error)
     func navigateToMovieDetailScreen(_ presenter :MovieSearchPresenter, didTapMovie movie : Movie)
+    
 }
 
 final class MovieSearchPresenter {
@@ -18,6 +20,7 @@ final class MovieSearchPresenter {
     
     weak var delegate : MovieSearchPresenterDelegate?
     var movieInteractor : MovieInteractorContract = MovieInteractor()
+    var movieStorageInteractor : MovieStorageInteractor = MovieStorageInteractor()
     
     lazy var coreDataStack : CoreDataStack = PersistentDelegate.shared.coredataStack
     
@@ -56,19 +59,13 @@ extension MovieSearchPresenter {
 extension MovieSearchPresenter {
     func cacheQueryResults(for query : String, with results : [Movie]) {
         
-        let newQueryResult = MovieQuery(context: coreDataStack.context)
-        newQueryResult.id = UUID()
-        newQueryResult.query = query.lowercased()
-        
-        let dataFormatter = DateFormatter()
-        dataFormatter.dateFormat = "MMM d, h:mm a"
-        let searchDate = dataFormatter.string(from: Date())
-        newQueryResult.date = searchDate
-        
-        GeneralUtils.encodeData(results) { data in
-            guard let data = try? data.get() else {return}
-            newQueryResult.results = data
-            self.coreDataStack.saveContext()
+        movieStorageInteractor.saveSearch(for: query, with: results) { result in
+            switch result {
+            case .success(_):
+                return
+            case .failure(let error):
+                self.delegate?.saveMovieSearchResults(self, didFailWithError: error)
+            }
         }
     }
 }
