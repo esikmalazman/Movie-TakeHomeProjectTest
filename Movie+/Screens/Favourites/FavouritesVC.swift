@@ -11,6 +11,11 @@ final class FavouritesVC: UIViewController {
     
     @IBOutlet weak var favouriteTableView : UITableView!
     
+    lazy var emptyState : EmptyState = {
+        let vc = EmptyState()
+        return vc
+    }()
+    
     var presenter : FavouritesPresenter = FavouritesPresenter()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +29,7 @@ final class FavouritesVC: UIViewController {
         
         presenter.delegate = self
         configureFavouritesTableView()
+        configureEmptyState()
     }
 }
 
@@ -69,15 +75,18 @@ extension FavouritesVC : FavouritesPresenterDelegate {
     }
     
     func renderFavouritesMovie(_ presenter: FavouritesPresenter, didLoadSuccess data: [MovieFavourites]) {
-        self.reloadTableView()
+        reloadTableView()
+        shouldShowEmptyState()
     }
     
     func renderFavouritesMovie(_ presenter: FavouritesPresenter, didFailWithError error: Error) {
         showRenderMovieFavouritesErrorAlert(error)
+        shouldShowEmptyState()
     }
     
     func refreshFavouriteMovie(_ presenter: FavouritesPresenter) {
-        self.reloadTableView()
+        reloadTableView()
+        shouldShowEmptyState()
     }
 }
 
@@ -101,6 +110,18 @@ private extension FavouritesVC {
         
         DispatchQueue.main.async {
             self.present(alert, animated: true)
+        }
+    }
+    
+    func configureEmptyState() {
+        emptyState.layout(in: view)
+        emptyState.setup(for: .favourites)
+    }
+    
+    func shouldShowEmptyState() {
+        DispatchQueue.main.async {
+            let isFavouritesMovieAvailable = self.presenter.favouriteList.isEmpty
+            self.emptyState.view.isHidden = !isFavouritesMovieAvailable
         }
     }
 }

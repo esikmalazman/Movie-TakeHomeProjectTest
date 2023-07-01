@@ -11,6 +11,11 @@ final class RecentsSearchVC: UIViewController {
     
     @IBOutlet weak var recentsTableView : UITableView!
     
+    lazy var emptyState : EmptyState = {
+        let vc = EmptyState()
+        return vc
+    }()
+    
     var presenter : RecentsSearchPresenter = RecentsSearchPresenter()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +29,7 @@ final class RecentsSearchVC: UIViewController {
         
         presenter.delegate = self
         configureRecentsTableView()
+        configureEmptyState()
     }
 }
 
@@ -68,14 +74,17 @@ extension RecentsSearchVC : RecentsSearchPresenterDelegate {
     
     func renderCacheQuerySearchResults(_ presenter: RecentsSearchPresenter, didLoadSuccess data: [MovieQuery]) {
         reloadMovieListTableView()
+        shouldShowEmptyState()
     }
     
     func renderCacheQuerySearchResults(_ presenter: RecentsSearchPresenter, didFailWithError error: Error) {
         showRequestCacheMovieErrorAlert(error)
+        shouldShowEmptyState()
     }
     
     func refreshCacheQuerySearchResults(_ presenter: RecentsSearchPresenter) {
         reloadMovieListTableView()
+        shouldShowEmptyState()
     }
 }
 
@@ -102,6 +111,18 @@ private extension RecentsSearchVC {
         
         DispatchQueue.main.async {
             self.present(alert, animated: true)
+        }
+    }
+    
+    func configureEmptyState() {
+        emptyState.layout(in: view)
+        emptyState.setup(for: .recents)
+    }
+    
+    func shouldShowEmptyState() {
+        DispatchQueue.main.async {
+            let isRecentsSearchAvailable = self.presenter.movieQueryList.isEmpty
+            self.emptyState.view.isHidden = !isRecentsSearchAvailable
         }
     }
 }
