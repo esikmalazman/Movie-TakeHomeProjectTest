@@ -7,14 +7,6 @@
 
 import UIKit
 
-#warning("""
-Todo's
-1. Display selected movie from search results
-- Setup UI for Movie Information ✅
-- Add option to save movie in favourites, save through Core Data (Bonus)
-- Add Error handling through Alert
-""")
-
 final class MovieDetailVC: UIViewController {
     
     @IBOutlet weak var posterImageView: UIImageView!
@@ -121,16 +113,17 @@ private extension MovieDetailVC {
         addToFavouriteBtn.setImage(image, for: .normal)
         
         if state {
-            addToFavouriteBtn.backgroundColor = .systemIndigo
-            addToFavouriteBtn.layer.borderColor = UIColor.clear.cgColor
-            addToFavouriteBtn.tintColor = .white
-            addToFavouriteBtn.setTitleColor(.white, for: .normal)
+            setAddFavouriteButton(backgroundColor: .systemIndigo, borderColor: .clear, tintColor: .white)
         } else {
-            addToFavouriteBtn.backgroundColor = .white
-            addToFavouriteBtn.layer.borderColor = UIColor.systemIndigo.cgColor
-            addToFavouriteBtn.layer.borderWidth = 1
-            addToFavouriteBtn.tintColor = .systemIndigo
-            addToFavouriteBtn.setTitleColor(.systemIndigo, for: .normal)
+            setAddFavouriteButton(backgroundColor: .white, borderColor: .systemIndigo, tintColor: .systemIndigo)
         }
+    }
+    
+    func setAddFavouriteButton(backgroundColor : UIColor, borderColor : UIColor, tintColor : UIColor) {
+        addToFavouriteBtn.backgroundColor = backgroundColor
+        addToFavouriteBtn.layer.borderColor = borderColor.cgColor
+        addToFavouriteBtn.layer.borderWidth = 1
+        addToFavouriteBtn.tintColor = tintColor
+        addToFavouriteBtn.setTitleColor(tintColor, for: .normal)
     }
 }

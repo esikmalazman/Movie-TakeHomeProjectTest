@@ -47,7 +47,6 @@ extension FavouritesVC : UITableViewDelegate {
         presenter.openFavouriteMovieList(at: indexPath)
     }
     
-#warning("handle swipe to delete")
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { _, _, _ in
             self.presenter.removeFavouriteMovieList(at: indexPath)
