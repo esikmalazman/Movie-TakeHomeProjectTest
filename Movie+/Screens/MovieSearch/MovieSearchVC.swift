@@ -10,9 +10,6 @@ import UIKit
 #warning("""
 Todo's
 Bonus
-
-1. Check network connectivity, if online we direct to previously movie fetch (Bonus) by show toast UI
-
 2. Add date into attributes and we check if it more than specified time we clear the cache automatically (optional)
 
 4. Prepare Unit Test / UI Test
@@ -27,12 +24,18 @@ final class MovieSearchVC: UIViewController {
     @IBOutlet weak var searchResultsTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    lazy var emptyState : EmptyState = {
+        let vc = EmptyState()
+        return vc
+    }()
+    
     var presenter : MovieSearchPresenter = MovieSearchPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
         
+        configureEmptyState()
         configureSearcBar()
         configureTableView()
         
@@ -80,6 +83,7 @@ extension MovieSearchVC : UITableViewDelegate {
 extension MovieSearchVC : MovieSearchPresenterDelegate {
     func renderMovieSearchResults(_ presenter: MovieSearchPresenter, didLoadSuccess data: [Movie]) {
         reloadTableView()
+        shouldHideEmptyState(true)
     }
     
     func renderMovieSearchResults(_ presenter: MovieSearchPresenter, didFailWithError error: Error) {
@@ -108,6 +112,11 @@ private extension MovieSearchVC {
         searchBar.delegate = self
     }
     
+    func configureEmptyState() {
+        emptyState.layout(in: view)
+        emptyState.setup(for: .search)
+    }
+    
     func clearSearchBar() {
         searchBar.text = ""
         searchBar.resignFirstResponder()
@@ -126,6 +135,12 @@ private extension MovieSearchVC {
         
         DispatchQueue.main.async {
             self.present(alert, animated: true)
+        }
+    }
+    
+    func shouldHideEmptyState(_ state : Bool) {
+        DispatchQueue.main.async {
+            self.emptyState.view.isHidden = state
         }
     }
 }
