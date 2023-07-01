@@ -10,18 +10,24 @@ import Foundation
 protocol MovieDetailPresenterDelegate : AnyObject {
     func renderMovieDetails(_ presenter :MovieDetailPresenter, didLoadSuccess data : MovieDetail)
     func renderMovieDetails(_ presenter :MovieDetailPresenter, didFailWithError error : Error)
-    func saveMovieDetails(_ presenter :MovieDetailPresenter, isBoomarkSaved : Bool)
-    func saveMovieDetails(_ presenter :MovieDetailPresenter, isBoomarkSaved : Bool, didFailWithError error : Error)
+    func saveMovieDetails(_ presenter :MovieDetailPresenter, didTapBookmark bookmarked : Bool)
+    func saveMovieDetails(_ presenter :MovieDetailPresenter, didFailToSaveWithError error : Error)
 }
 
 final class MovieDetailPresenter {
     
     var movie : Movie?
     var movieDetail : MovieDetail?
+    var bookmarked : Bool = false
     
     weak var delegate : MovieDetailPresenterDelegate?
     var movieInteractor : MovieInteractorContract = MovieInteractor()
     lazy var coreDataStack : CoreDataStack = PersistentDelegate.shared.coredataStack
+    
+    func toggleBookmark() {
+        bookmarked.toggle()
+        delegate?.saveMovieDetails(self, didTapBookmark: bookmarked)
+    }
     
     func requestMovieDetails() {
         movieInteractor.fetchMovieDetails(by: "\(movie?.id ?? 0)") { result in
@@ -44,9 +50,9 @@ final class MovieDetailPresenter {
         movieFavourites.overview = movieDetail?.overview
         movieFavourites.backdropPath = movieDetail?.backdropPath
         coreDataStack.saveContext { error in
-            self.delegate?.saveMovieDetails(self, isBoomarkSaved: false, didFailWithError: error)
+            guard let error = error else {return}
+            self.delegate?.saveMovieDetails(self, didFailToSaveWithError: error)
         }
-        self.delegate?.saveMovieDetails(self, isBoomarkSaved: true)
     }
 }
 

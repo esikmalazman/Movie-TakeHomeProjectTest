@@ -14,7 +14,6 @@ Bonus
 1. Check network connectivity, if online we direct to previously movie fetch (Bonus) by show toast UI
 
 2. Save favourites
-- Implement Method to save the favourites
 - Add date into attributes and we check if it more than specified time we clear the cache automatically (optional)
 
 3. Refine UI
@@ -91,7 +90,7 @@ extension MovieSearchVC : MovieSearchPresenterDelegate {
     
     func navigateToMovieDetailScreen(_ presenter: MovieSearchPresenter, didTapMovie movie : Movie) {
         let movieDetailVC = MovieDetailVC()
-        movieDetailVC.setMovieDetail(movie)
+        movieDetailVC.requestMovieDetail(for: movie)
         navigationController?.pushViewController(movieDetailVC, animated: true)
     }
 }

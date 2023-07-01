@@ -48,12 +48,13 @@ final class CoreDataStack {
         self.storageType = storageType
     }
     
-    func saveContext(_ completionError : @escaping (Error) -> Void = {_ in }) {
+    func saveContext(_ completion : @escaping (Error?) -> Void = {_ in }) {
         guard context.hasChanges else {return}
         do {
             try context.save()
+            completion(nil)
         } catch {
-            completionError(error)
+            completion(error)
         }
     }
     

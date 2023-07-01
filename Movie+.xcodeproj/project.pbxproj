@@ -51,6 +51,7 @@
 		7FF756D62A4F66A500953C94 /* MovieFavourites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756D42A4F66A500953C94 /* MovieFavourites+CoreDataClass.swift */; };
 		7FF756D72A4F66A500953C94 /* MovieFavourites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756D52A4F66A500953C94 /* MovieFavourites+CoreDataProperties.swift */; };
 		7FF756DA2A4F7E0A00953C94 /* PersistentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756D92A4F7E0A00953C94 /* PersistentDelegate.swift */; };
+		7FF756DC2A4FEFBA00953C94 /* FavouritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF756DB2A4FEFBA00953C94 /* FavouritesPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		7FF756D42A4F66A500953C94 /* MovieFavourites+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieFavourites+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7FF756D52A4F66A500953C94 /* MovieFavourites+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieFavourites+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7FF756D92A4F7E0A00953C94 /* PersistentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentDelegate.swift; sourceTree = "<group>"; };
+		7FF756DB2A4FEFBA00953C94 /* FavouritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 			children = (
 				7F97ED8E2A4B6A9800A667CE /* FavouritesVC.swift */,
 				7F97ED8F2A4B6A9800A667CE /* FavouritesVC.xib */,
+				7FF756DB2A4FEFBA00953C94 /* FavouritesPresenter.swift */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				7FE7D7F22A46A65C00229C2E /* HttpClient.swift in Sources */,
 				7F28B83B2A48000C00832AF0 /* UIImageView + Extensions.swift in Sources */,
 				7FD404A82A4780CC00CFBE41 /* Movie.swift in Sources */,
+				7FF756DC2A4FEFBA00953C94 /* FavouritesPresenter.swift in Sources */,
 				7F97ED902A4B6A9800A667CE /* FavouritesVC.swift in Sources */,
 				7FF756CD2A4EB74700953C94 /* MovieQuery+CoreDataProperties.swift in Sources */,
 				7F28B8382A47FF4300832AF0 /* MovieSearchPresenter.swift in Sources */,
