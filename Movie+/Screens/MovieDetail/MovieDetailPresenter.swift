@@ -22,7 +22,7 @@ final class MovieDetailPresenter {
     
     weak var delegate : MovieDetailPresenterDelegate?
     var movieInteractor : MovieInteractorContract = MovieInteractor()
-    lazy var coreDataStack : CoreDataStack = PersistentDelegate.shared.coredataStack
+    var movieStorageInteractor : MovieStorageInteractor = MovieStorageInteractor()
     
     func toggleBookmark() {
         bookmarked.toggle()
@@ -42,15 +42,7 @@ final class MovieDetailPresenter {
     }
     
     func saveMovieToFavourites() {
-        let movieFavourites = MovieFavourites(context: coreDataStack.context)
-        movieFavourites.id = Int32(movie?.id ?? 0)
-        movieFavourites.title = movie?.title
-        movieFavourites.releaseDate = movie?.releaseDate
-        movieFavourites.posterPath = movie?.posterPath
-        movieFavourites.overview = movieDetail?.overview
-        movieFavourites.backdropPath = movieDetail?.backdropPath
-        coreDataStack.saveContext { error in
-            guard let error = error else {return}
+        movieStorageInteractor.saveBookmarked(movie: movie, with: movieDetail) { error in
             self.delegate?.saveMovieDetails(self, didFailToSaveWithError: error)
         }
     }
