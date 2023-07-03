@@ -13,11 +13,10 @@ Bonus
 1. Add date into attributes and we check if it more than specified time we clear the cache automatically (optional)
 
 2. Prepare Unit Test / UI Test
-- Validate all UI connected include delegate, navigation controller, title ✅
-- Prepare to test Network & Core Data
+- Test Network & Core Data
 
-3. Refactor Core Data to use dedicated helper instead
-
+3. Handle UI thread
+- Remove boilerplate thread UI main in VC
 """)
 
 final class MovieSearchVC: UIViewController {

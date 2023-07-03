@@ -7,7 +7,16 @@
 
 import Foundation
 
-final class MovieStorageInteractor {
+protocol MovieStorageInteractorContract {
+    func saveSearch(for query : String, with results : [Movie], _ completion : @escaping (Result<(), Error>)->Void)
+    func fetchSavedSearch(_ completion : @escaping (Result<[MovieQuery], Error>)->Void)
+    func deleteSelectedSearch(_ query : MovieQuery)
+    func saveBookmarked(movie : Movie?, with detail : MovieDetail?, _ errorClosure : @escaping (Error) -> Void)
+    func fetchBookmarkedMovie(_ completion : @escaping (Result<[MovieFavourites],Error>)->Void)
+    func deleteSelectedBookmarkedMovie(_ movie : MovieFavourites)
+}
+
+final class MovieStorageInteractor : MovieStorageInteractorContract {
     
     let persistent : CoreDataStack
     
@@ -79,14 +88,5 @@ final class MovieStorageInteractor {
     
     func deleteSelectedBookmarkedMovie(_ movie : MovieFavourites) {
         persistent.deleteContext(for: movie)
-    }
-}
-
-extension Date {
-    var toMonthDayTimeFormat : String {
-        let dataFormatter = DateFormatter()
-        dataFormatter.dateFormat = "MMM d, h:mm a"
-        let date = dataFormatter.string(from: self)
-        return date
     }
 }

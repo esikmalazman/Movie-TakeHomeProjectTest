@@ -22,7 +22,7 @@ final class MovieDetailPresenter {
     
     weak var delegate : MovieDetailPresenterDelegate?
     var movieInteractor : MovieInteractorContract = MovieInteractor()
-    var movieStorageInteractor : MovieStorageInteractor = MovieStorageInteractor()
+    var movieStorageInteractor : MovieStorageInteractorContract = MovieStorageInteractor()
     
     func toggleBookmark() {
         bookmarked.toggle()

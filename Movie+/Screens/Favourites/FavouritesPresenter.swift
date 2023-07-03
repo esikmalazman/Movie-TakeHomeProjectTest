@@ -17,7 +17,7 @@ protocol FavouritesPresenterDelegate : AnyObject {
 final class FavouritesPresenter {
     
     var favouriteList : [MovieFavourites] = []
-    var movieStorageInteractor : MovieStorageInteractor = MovieStorageInteractor()
+    var movieStorageInteractor : MovieStorageInteractorContract = MovieStorageInteractor()
     weak var delegate : FavouritesPresenterDelegate?
     
     func requestFavouritesMovie() {

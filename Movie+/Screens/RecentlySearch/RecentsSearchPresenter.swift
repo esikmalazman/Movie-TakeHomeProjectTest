@@ -17,7 +17,7 @@ protocol RecentsSearchPresenterDelegate : AnyObject {
 final class RecentsSearchPresenter {
     
     var movieQueryList : [MovieQuery] = []
-    var movieStorageInteractor : MovieStorageInteractor = MovieStorageInteractor()
+    var movieStorageInteractor : MovieStorageInteractorContract = MovieStorageInteractor()
     
     weak var delegate : RecentsSearchPresenterDelegate?
     

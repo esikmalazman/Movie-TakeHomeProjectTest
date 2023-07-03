@@ -20,7 +20,7 @@ final class MovieSearchPresenter {
     
     weak var delegate : MovieSearchPresenterDelegate?
     var movieInteractor : MovieInteractorContract = MovieInteractor()
-    var movieStorageInteractor : MovieStorageInteractor = MovieStorageInteractor()
+    var movieStorageInteractor : MovieStorageInteractorContract = MovieStorageInteractor()
     
     func requestMovie(for query: String) {
         movieInteractor.fetchMovieTitle(for: query) { result in
