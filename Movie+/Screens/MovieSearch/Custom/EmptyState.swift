@@ -25,7 +25,6 @@ extension EmptyStateKind {
         }
     }
     
-    #warning("replace with custom image")
     var imageName : String {
         switch self {
         case .search:

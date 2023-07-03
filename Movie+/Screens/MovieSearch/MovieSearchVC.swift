@@ -10,8 +10,6 @@ import UIKit
 #warning("""
 Todo's
 Bonus
-1. Add date into attributes and we check if it more than specified time we clear the cache automatically (optional)
-
 2. Prepare Unit Test / UI Test
 - Test Network & Core Data
 
@@ -50,6 +48,7 @@ extension MovieSearchVC : UISearchBarDelegate {
         
         presenter.clearMovieList()
         presenter.requestMovie(for: queryText)
+        searchBar.resignFirstResponder()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

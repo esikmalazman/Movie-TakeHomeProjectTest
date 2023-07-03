@@ -198,13 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				7FF756D82A4F7DF800953C94 /* App */,
-				7F5405792A4C6F9A0063AC68 /* Local */,
 				7F97ED8B2A4B69E400A667CE /* Screens */,
-				7FD404A22A47807100CFBE41 /* Stubs */,
-				7F20D9D52A44BD1C002A8937 /* Remote */,
-				7F1953F52A44BA6F0058379C /* LaunchScreen.storyboard */,
-				7F1953F32A44BA6F0058379C /* Assets.xcassets */,
-				7F1953F82A44BA6F0058379C /* Info.plist */,
+				7F4E7EED2A533D75001F5914 /* Data */,
+				7F4E7EEC2A533C3A001F5914 /* Resources */,
 				7F28B8392A47FFFE00832AF0 /* Extensions */,
 				7F0C0CF62A45F2C700C710D7 /* Utilities */,
 			);
@@ -277,6 +273,26 @@
 				7FDFFAC62A49DCFB00A5C7C0 /* MockURLProtocol.swift */,
 			);
 			path = "Movie+Tests";
+			sourceTree = "<group>";
+		};
+		7F4E7EEC2A533C3A001F5914 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7FD404A22A47807100CFBE41 /* Stubs */,
+				7F1953F32A44BA6F0058379C /* Assets.xcassets */,
+				7F1953F82A44BA6F0058379C /* Info.plist */,
+				7F1953F52A44BA6F0058379C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7F4E7EED2A533D75001F5914 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7F20D9D52A44BD1C002A8937 /* Remote */,
+				7F5405792A4C6F9A0063AC68 /* Local */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		7F5405792A4C6F9A0063AC68 /* Local */ = {
@@ -686,11 +702,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66846BKCQ4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Movie+/Info.plist";
+				INFOPLIST_FILE = "Movie+/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -714,11 +731,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66846BKCQ4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Movie+/Info.plist";
+				INFOPLIST_FILE = "Movie+/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
