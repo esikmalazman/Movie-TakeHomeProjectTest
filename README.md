@@ -4,7 +4,11 @@
 -  Creating a simple iOS app that allows users to ```search for movies``` and ```view their details```. The app should make use of the [Movie Database API](https://www.themoviedb.org/documentation/api) to retrieve movie information.
 
 ## Demo
--
+<img src="https://github.com/esikmalazman/Movie-TakeHomeProjectTest/assets/59039044/951c80e8-f3ba-46c5-a8e9-e9d195167817" width="200">
+
+
+
+
 
 ## Installation
 
