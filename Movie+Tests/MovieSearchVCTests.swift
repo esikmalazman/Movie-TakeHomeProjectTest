@@ -4,6 +4,7 @@ import XCTest
 final class MovieSearchVCTests: XCTestCase {
     
     var sut : MovieSearchVC!
+    var navigation : UINavigationController!
     
     override func setUp() {
         super.setUp()
@@ -11,11 +12,14 @@ final class MovieSearchVCTests: XCTestCase {
         
         sut = MovieSearchVC()
         sut.presenter = presenter
+        
+        navigation = UINavigationController(rootViewController: sut)
         sut.loadViewIfNeeded()
     }
     
     override func tearDown() {
         executeRunLoop()
+        navigation = nil
         sut = nil
         super.tearDown()
     }
@@ -135,8 +139,8 @@ final class MovieSearchVCTests: XCTestCase {
     func test_cellForRowAt_withRow2_shouldConfigureWithPropertyOf3() {
         sut.presenter.moviesList = [
             Movie(id: 1, title: "Title 1", releaseDate: "Release Date 1", posterPath: "Poster Path 1"),
-            Movie(id: 1, title: "Title 2", releaseDate: "Release Date 2", posterPath: "Poster Path 2"),
-            Movie(id: 1, title: "Title 3", releaseDate: "Release Date 3", posterPath: "Poster Path 3"),
+            Movie(id: 2, title: "Title 2", releaseDate: "Release Date 2", posterPath: "Poster Path 2"),
+            Movie(id: 3, title: "Title 3", releaseDate: "Release Date 3", posterPath: "Poster Path 3"),
         ]
         
         guard let cell = cellForRowAt(sut.searchResultsTableView, atRow: 2) as? MovieResultCell else {
@@ -146,5 +150,21 @@ final class MovieSearchVCTests: XCTestCase {
         
         XCTAssertEqual(cell.titleLabel.text, "Title 3", "title")
         XCTAssertEqual(cell.releaseDateLabel.text, "Release Date 3", "releaseDate")
+    }
+    
+    func test_navigationControllerShouldBeConnected() {
+        XCTAssertNotNil(sut.navigationController)
+    }
+    
+    func test_tappingRow1_shouldPushMovieDetailViewController() {
+        sut.presenter.moviesList = [
+            Movie(id: 1, title: "Title 1", releaseDate: "Release Date 1", posterPath: "Poster Path 1"),
+        ]
+        
+        didSelectRow(sut.searchResultsTableView, atRow: 0)
+        executeRunLoop()
+        
+        let pushedVC = navigation.viewControllers.last as? MovieDetailVC
+        XCTAssertNotNil(pushedVC)
     }
 }

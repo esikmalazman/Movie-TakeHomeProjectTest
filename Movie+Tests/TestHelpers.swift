@@ -33,3 +33,9 @@ func numberOfRows(_ tableView : UITableView, for section : Int = 0) -> Int? {
     return rowsCount
 }
 
+// MARK:  UITableViewDelegate
+func didSelectRow(_ tableView : UITableView, at section : Int = 0, atRow row : Int) {
+    let indexPath = IndexPath(row: row, section: section)
+    tableView.delegate?.tableView?(tableView, didSelectRowAt: indexPath)
+}
+
