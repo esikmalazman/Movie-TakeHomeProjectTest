@@ -99,8 +99,8 @@ private extension RecentsSearchVC {
     }
     
     func reloadMovieListTableView() {
-        DispatchQueue.main.async {
-            self.recentsTableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.recentsTableView.reloadData()
         }
     }
     
@@ -109,8 +109,8 @@ private extension RecentsSearchVC {
             self.presenter.requestCacheSearchQueries()
         }
         
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
         }
     }
     
@@ -120,7 +120,8 @@ private extension RecentsSearchVC {
     }
     
     func shouldShowEmptyState() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
             let isRecentsSearchAvailable = self.presenter.movieQueryList.isEmpty
             self.emptyState.view.isHidden = !isRecentsSearchAvailable
         }

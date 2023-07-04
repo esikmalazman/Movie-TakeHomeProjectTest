@@ -62,8 +62,8 @@ extension MovieDetailVC : MovieDetailPresenterDelegate {
     }
     
     func renderMovieDetails(_ presenter: MovieDetailPresenter, didLoadSuccess data: MovieDetail) {
-        DispatchQueue.main.async {
-            self.configure(data)
+        DispatchQueue.main.async { [weak self] in
+            self?.configure(data)
         }
     }
     
@@ -85,8 +85,8 @@ private extension MovieDetailVC {
             self.presenter.requestMovieDetails()
         }
         
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
         }
     }
     
@@ -94,8 +94,8 @@ private extension MovieDetailVC {
         let alert = showErrorAlert(error.localizedDescription) {
             self.presenter.saveMovieToFavourites()
         }
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
         }
     }
     
@@ -103,8 +103,8 @@ private extension MovieDetailVC {
         guard presenter.bookmarked else {return}
         
         let alert = showBasicAlert("Woohoo!", "Movie succefully add to bookmarks")
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
         }
     }
     

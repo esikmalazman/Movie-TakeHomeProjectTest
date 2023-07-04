@@ -116,8 +116,8 @@ private extension MovieSearchVC {
     }
     
     func reloadTableView() {
-        DispatchQueue.main.async {
-            self.searchResultsTableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.searchResultsTableView.reloadData()
         }
     }
     
@@ -126,22 +126,22 @@ private extension MovieSearchVC {
             self.presenter.requestMovie(for: self.searchBar.text ?? "")
         }
         
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
         }
     }
     
     func showSaveMovieErrorAlert(_ error : Error) {
         let alert = showBasicAlert("Oops! Something went wrong!", error.localizedDescription)
         
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
         }
     }
     
     func shouldHideEmptyState(_ state : Bool) {
-        DispatchQueue.main.async {
-            self.emptyState.view.isHidden = state
+        DispatchQueue.main.async { [weak self] in
+            self?.emptyState.view.isHidden = state
         }
     }
 }

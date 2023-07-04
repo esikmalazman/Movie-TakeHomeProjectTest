@@ -98,8 +98,8 @@ private extension FavouritesVC {
     }
     
     func reloadTableView() {
-        DispatchQueue.main.async {
-            self.favouriteTableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.favouriteTableView.reloadData()
         }
     }
     
@@ -108,8 +108,8 @@ private extension FavouritesVC {
             self.presenter.requestFavouritesMovie()
         }
         
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
         }
     }
     
@@ -119,7 +119,8 @@ private extension FavouritesVC {
     }
     
     func shouldShowEmptyState() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
             let isFavouritesMovieAvailable = self.presenter.favouriteList.isEmpty
             self.emptyState.view.isHidden = !isFavouritesMovieAvailable
         }
