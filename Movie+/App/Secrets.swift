@@ -8,4 +8,4 @@
 import Foundation
 
 /// Find API Key at : https://www.themoviedb.org/settings/api
-let apiKey = "API_KEY"
+let apiKey = "e325ed91743acc1b8f7327898262f91f"
