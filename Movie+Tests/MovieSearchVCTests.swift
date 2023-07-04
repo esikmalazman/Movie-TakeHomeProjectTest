@@ -147,8 +147,4 @@ final class MovieSearchVCTests: XCTestCase {
         XCTAssertEqual(cell.titleLabel.text, "Title 3", "title")
         XCTAssertEqual(cell.releaseDateLabel.text, "Release Date 3", "releaseDate")
     }
-    
-    // MARK:  TODO's
-    // 1. To test requested movie flow, we might create protocol for presenter then create mock version of it
-    // 2. To test the delegate and dataSource method of the table view
 }
