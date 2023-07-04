@@ -1,12 +1,29 @@
 # iOS Test Evaluation
 
+
 ## Introduction
+
 -  Creating a simple iOS app that allows users to ```search for movies``` and ```view their details```. The app should make use of the [Movie Database API](https://www.themoviedb.org/documentation/api) to retrieve movie information.
 
 ## Demo
+
 <img src="https://github.com/esikmalazman/Movie-TakeHomeProjectTest/assets/59039044/951c80e8-f3ba-46c5-a8e9-e9d195167817" width="200">
 
+###  Requirements
 
+- The app should have two screens: a search screen and a details screen.
+-  The search screen should have a search bar that allows the user to search for movies by title. The search results should be displayed in a table view.
+- The table view should display the movie title, release date, and poster image.
+- The details screen should display additional information about the selected movie, including the movie title, release date, poster image, and overview.
+- The app should cache search results for offline use.
+- The app should handle error cases gracefully and provide feedback to the user when necessary.
+  
+### Bonus points
+
+- Implement pagination in the search results table view.
+- Allow users to save movies to a favorites list.
+- Add unit tests and UI tests for your code.
+- Offline mode: the app can persist the data previously fetched and see them when the app is opened in offline mode. 
 
 
 
@@ -18,7 +35,7 @@
 4. Unarchive the Zip and Open ```Secret.swift``` file in``` Movie+ -> App -> Secrets.swift``` and replace the value of ```"API_KEY"``` with  `API Key from TMDB`
 5. Open ```Movie+.xcodeproj``` and build the project with ```Command + B ```, upon build success run the project with ```Command + R```.
 
-## Technologies Used :
+## Technologies Used 
 
 - `Swift 5`
 - `UIKit` for UI Development (UITableView, UIViewController, UIView, UITabBar)
