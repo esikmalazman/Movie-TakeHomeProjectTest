@@ -7,16 +7,6 @@
 
 import UIKit
 
-#warning("""
-Todo's
-Bonus
-2. Prepare Unit Test / UI Test
-- Test Network & Core Data
-
-3. Handle UI thread
-- Remove boilerplate thread UI main in VC
-""")
-
 final class MovieSearchVC: UIViewController {
     
     @IBOutlet weak var searchResultsTableView: UITableView!
