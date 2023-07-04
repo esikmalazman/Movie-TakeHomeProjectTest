@@ -21,4 +21,15 @@ func searchBarSearchButtonClicked(_ searchBar : UISearchBar) {
     searchBar.delegate?.searchBarSearchButtonClicked?(searchBar)
 }
 
+// MARK:  UITableViewDataSource
+func cellForRowAt(_ tableView : UITableView, at section : Int = 0, atRow row : Int) -> UITableViewCell? {
+    let indexPath = IndexPath(row: row, section: section)
+    let cell = tableView.dataSource?.tableView(tableView, cellForRowAt: indexPath)
+    return cell
+}
+
+func numberOfRows(_ tableView : UITableView, for section : Int = 0) -> Int? {
+    let rowsCount = tableView.dataSource?.tableView(tableView, numberOfRowsInSection: section)
+    return rowsCount
+}
 
